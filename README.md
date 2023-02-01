@@ -1,20 +1,29 @@
-# Smart Recipe Builder
+# tasty-facts
+
+## Description
+
+The purpose of this app is to enable user to find a recipes from around the world, while
+learning interesting facts about the country of choice.
+
+
 ## User Story
-AS a cooking lover 
+AS a person who enjoy travelling and finding new recipes from around the world.
 
-I WANT to build and edit my own recipies 
+I WANT to find interesting facts about the chosen country, while finding new recipes.
 
-SO THAT I have them handy from any place in the World
-## Discription
+SO THAT I can learn some intersting information about different countries and prepare new meals.
+
 ## Usage
+
 ## API Used
-supabase https://supabase.com/
+
 ## Team Members
-Adrian
 
-Aleksandra
+Adrian Karpenko
+Anna Noga
+Arthur Loosli
+Aleksandra Miekisiak
 
-Anna
-
-Arthur
 ## Licence
+
+
