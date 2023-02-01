@@ -19,9 +19,9 @@ SO THAT I can learn some intersting information about different countries and pr
 
 ## Team Members
 
-Adrian Karpenko
-Anna Noga
-Arthur Loosli
+Artur Karpenko,
+Anna Noga,
+Adrian Loosli,
 Aleksandra Miekisiak
 
 ## Licence
