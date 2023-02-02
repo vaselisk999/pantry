@@ -31,10 +31,12 @@ $(document).ready(function () {
   );
 });
 //-----------------------------------------------
-// Eventhandler for the search button
-$("#search").on("click", function () {
-  // get the value of the input field
-  country = $("#country").val();
-
-  console.log(country);
+$('#search').on('click', function() {
+  let country = $('#country').val();
+  getCountryData(country, updateUI);
 });
+
+function updateUI(data) {
+  // Use the data as needed
+  console.log(data);
+}
