@@ -40,15 +40,21 @@ $(document).ready(function () {
   );
 });
 
-
 //-----------------------------------------------
+// Event listener for the search button
 $('#search').on('click', function() {
-  let country = $('#country').val();
-  getCountryData(country, updateUI);
-});
-
-function updateUI(data) {
-  // Use the data as needed
+  country = $('#country').val();
+  getCountryData(country, function(data) {
+  updateUI(data);
+  });
+  // 
+  getRecipeData(country, function(data) {
+  updateUI(data);
+  });
+  });
+  
+  // Function to update the UI with the data
+  function updateUI(data) {
   console.log(data);
 }
 
@@ -75,3 +81,18 @@ function updateUI(data) {
 //   var buttonName = $(event.target).text();
 //           //function to display favorite recipe (buttonName)
 //       });
+
+//Modal//
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+ 
+
+  

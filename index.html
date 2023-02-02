@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="Enter your description here" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!--Custom Header Font-->
@@ -30,6 +31,45 @@
     </header>
     <!-- Main -->
     <main>
+
+      <!--Modal-->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Denmark</button>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+               <div class="form-group">
+             
+                  <label for="message-text" class="col-form-label"></label>
+             
+                  <textarea class="form-control" id="message-text">
+                    
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    
+                      Soluta enim error architecto similique maxime blanditiis mollitia non, 
+                      veritatis odit quidem iure qui, temporibus reiciendis? Ex repellat ab 
+                      voluptas nemo vitae!
+                  </textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+  
+  <!-- End of modal-->
       <!-- Container for geo facts-->
       <section id="geoFacts"class="geo-container"></section>
       <!-- Container for recipes -->
@@ -39,7 +79,7 @@
       <input class="input-field"type="text" id="country" placeholder="     Search for a country" />
       <button id="search" class="search-btn">Search</button>
     </div>
-
+  
     <!-- Footer -->
     <footer></footer>
     <!-- External Libraries -->
@@ -48,7 +88,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     
     <!-- Custom JavaScript -->
-    <script src="./assets/key.js"></script>
+    <script src="/key.js"></script>
     <script src="./assets/apicalls.js"></script>
     <script src="./assets/app.js"></script>
   </body>

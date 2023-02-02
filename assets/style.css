@@ -2,9 +2,10 @@
 header {
   background: #ffbd59;
 }
+
 h1 {
   color: #03989e;
-  font-family: 'Norwester', sans-serif; 
+  font-family: 'Norwester', sans-serif;
   font-weight: 500;
 }
 
@@ -17,12 +18,14 @@ h1 {
   bottom: 40px;
   width: 100%;
 }
+
 .input-field {
   height: 50px;
   width: 250px;
   border-radius: 50px;
   border: solid 2px #ffbd59;
 }
+
 /* Search button styles */
 .search-btn {
   height: 50px;
@@ -33,7 +36,7 @@ h1 {
   border: none;
   padding: 0;
   margin-left: 20px;
-  
+
   color: #ffbd59;
 }
 
@@ -41,10 +44,12 @@ h1 {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 .search-btn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 /* end of search button styles */
 
 #dropdown-btn {
@@ -54,25 +59,33 @@ h1 {
   color: #03989e;
   border: solid 2px;
   padding-right: 20px;
-  
+
   height: 50px;
   font-size: 1.2rem;
 }
+
 .dropdown {
   width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.dropdown-menu{
+
+.dropdown-menu {
   border-radius: 100px;
   color: #03989e;
   border-radius: 100px;
   border-color: #03989e;
 }
-.dropdown-item{
+
+.dropdown-item {
   display: flex;
   justify-content: space-between;
   color: #03989e;
   border-radius: 100px;
+}
+
+#message-text {
+  max-height: fit-content;
+  height: 500px;
 }
