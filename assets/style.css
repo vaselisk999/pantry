@@ -47,7 +47,16 @@ h1 {
 }
 /* end of search button styles */
 
+.modal-body{
+background-color: #03989e;
+
+}
+
 #message-text{
 max-height: fit-content;
 height: 500px;
+}
+
+.modal-dialog{
+border-radius: 80px;
 }
