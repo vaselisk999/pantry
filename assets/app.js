@@ -38,6 +38,8 @@ $(document).ready(function () {
   </nav>'
   
   );
+
+
 });
 
 //-----------------------------------------------
@@ -81,6 +83,7 @@ $('#search').on('click', function() {
 //   var buttonName = $(event.target).text();
 //           //function to display favorite recipe (buttonName)
 //       });
+<<<<<<< HEAD
 
 //Function for modal//
 
@@ -93,6 +96,34 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 })
+=======
+>>>>>>> 06867beb32a424ce47555e48d62c694880996ddf
  
+//class SearchApiClass
+//ToDo find new name for class
+function SearchApiClass(country){
+  //country code
+  this.country = country;
+
+  //class method searche by click on country 
+  this.searcheByCountry = function (){
+    var self = this;
+
+    //get country data
+    getCountryData(this.country, function(data){
+      console.log(data);
+      console.log(self.country);
+      $("#exampleModal").modal('show');
+      $("#exampleModalLabel").text(self.country);
+    });
+
+  }
+
+
+  //class method 
+  this.searcheByInput = function(){
+
+  }
+}
 
   
