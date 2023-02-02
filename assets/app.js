@@ -38,7 +38,7 @@ $('#search').on('click', function() {
   getCountryData(country, function(data) {
   updateUI(data);
   });
-  
+  // 
   getRecipeData(country, function(data) {
   updateUI(data);
   });
