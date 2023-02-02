@@ -46,3 +46,16 @@ h1 {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 /* end of search button styles */
+
+
+/* map styles */
+
+.jvectormap-container {
+  height:100%;
+  width:100%;
+}
+
+#world-map {
+  position:absolute;
+  height:100%;
+}
