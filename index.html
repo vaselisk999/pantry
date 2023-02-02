@@ -20,6 +20,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <!-- map styles -->
+    <link rel="stylesheet" media="all" href="./assets/css/jquery-jvectormap-2.0.5.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/style.css">
     <title>Tasty Facts</title>
@@ -70,15 +72,23 @@
       </div>
   
   <!-- End of modal-->
+      <div class="search-container">
+         <input class="input-field"type="text" id="country" placeholder="     Search for a country" />
+         <button id="search" class="search-btn">Search</button>
+      </div>
+      <!-- map wrapper conteiner -->
+      <selection class="map-wrapper">
+         
+         <div id="world-map" ></div>
+      </selection>
+
+
       <!-- Container for geo facts-->
-      <section id="geoFacts"class="geo-container"></section>
+      <!-- <section id="geoFacts"class="geo-container"></section> -->
       <!-- Container for recipes -->
-      <section id="recipesContainer" class="recipes-container"></section>
+      <!-- <section id="recipesContainer" class="recipes-container"></section> -->
     </main>
-    <div class="search-container">
-      <input class="input-field"type="text" id="country" placeholder="     Search for a country" />
-      <button id="search" class="search-btn">Search</button>
-    </div>
+    
   
     <!-- Footer -->
     <footer></footer>
@@ -88,8 +98,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     
     <!-- Custom JavaScript -->
-    <script src="/key.js"></script>
+    <!-- <script src="./assets/key.js"></script> -->
     <script src="./assets/apicalls.js"></script>
     <script src="./assets/app.js"></script>
+
+    <!-- map related libs-->
+    <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
+    <script src="./assets/js/libs/world-mill-en.js"></script>
+    <script src="./assets/js/map.js"></script>
   </body>
 </html>
