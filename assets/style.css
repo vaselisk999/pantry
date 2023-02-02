@@ -1,6 +1,27 @@
-header{
-    background: #ffbd59;
+header {
+  background: #ffbd59;
 }
 h1 {
-    color: #03989e
+  color: #03989e;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+.search-btn {
+  height: 50px;
+  width: 100px;
+  border-radius: 100px;
+
+  background: #03989e;
+  border: none;
+  padding: 0;
+  margin-left: 20px;
+  font: inherit;
+  color: inherit;
 }
