@@ -8,9 +8,10 @@
 header {
   background: #ffbd59;
 }
+
 h1 {
   color: #03989e;
-  font-family: 'Norwester', sans-serif; 
+  font-family: 'Norwester', sans-serif;
   font-weight: 500;
 }
 
@@ -24,12 +25,14 @@ h1 {
   width: 100%;
   z-index: 1;
 }
+
 .input-field {
   height: 50px;
   width: 250px;
   border-radius: 50px;
   border: solid 2px #ffbd59;
 }
+
 /* Search button styles */
 .search-btn {
   height: 50px;
@@ -40,7 +43,7 @@ h1 {
   border: none;
   padding: 0;
   margin-left: 20px;
-  
+
   color: #ffbd59;
 }
 
@@ -48,26 +51,14 @@ h1 {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 .search-btn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 /* end of search button styles */
 
-
-.modal-body{
-background-color: #03989e;
-
-}
-
-#message-text{
-max-height: fit-content;
-height: 500px;
-}
-
-.modal-dialog{
-border-radius: 80px;
-=======
 #dropdown-btn {
   background-color: #ffbd59;
   border-color: #03989e;
@@ -93,8 +84,6 @@ border-radius: 80px;
   border-radius: 100px;
   border-color: #03989e;
 }
-<<<<<<< HEAD
-=======
 
 .dropdown-item {
   display: flex;
@@ -113,4 +102,3 @@ border-radius: 80px;
   width: 100vw;
   height: calc( 100vh - (var(--footer-width) + var(--header-width)));
 }
->>>>>>> 84dcb59a78975788e436210281db663238ce86de
