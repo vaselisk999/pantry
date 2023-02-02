@@ -30,13 +30,21 @@ $(document).ready(function () {
   </nav>'
   );
 });
-//-----------------------------------------------
-$('#search').on('click', function() {
-  let country = $('#country').val();
-  getCountryData(country, updateUI);
-});
 
-function updateUI(data) {
-  // Use the data as needed
+//-----------------------------------------------
+// Event listener for the search button
+$('#search').on('click', function() {
+  country = $('#country').val();
+  getCountryData(country, function(data) {
+  updateUI(data);
+  });
+  
+  getRecipeData(country, function(data) {
+  updateUI(data);
+  });
+  });
+  
+  // Function to update the UI with the data
+  function updateUI(data) {
   console.log(data);
-}
+  }
