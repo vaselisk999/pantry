@@ -1,12 +1,13 @@
 /* root variables */
 :root{
-  --header-width: 80px;
-  --footer-width: 80px;
+  --header-heigth: 80px;
+  --footer-heigth: 80px;
 }
 
 /* Header styles */
 header {
   background: #ffbd59;
+  height: var(--header-heigth);
 }
 
 h1 {
@@ -21,9 +22,8 @@ h1 {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 100px;
+  bottom: 100px;
   width: 100%;
-  z-index: 1;
 }
 
 .input-field {
@@ -99,6 +99,13 @@ h1 {
 
 /* map styles */
 #world-map {
-  width: 100vw;
-  height: calc( 100vh - (var(--footer-width) + var(--header-width)));
+  height: calc( 100vh - (var(--footer-heigth) + var(--header-heigth)));
+  padding: 60px;
+  background-color: #505050;
+}
+
+/* footer styles */
+footer{
+  background-color: #ffbd59;
+  height: var(--footer-heigth);
 }
