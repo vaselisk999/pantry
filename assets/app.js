@@ -11,20 +11,20 @@
 // 8. create dropdown menu with saved recipes
 // 9. Use the MealDB API 
 
+// Header/Navbar with logo
 $(document).ready(function() {
-    var header = $('#header');
-    header.append('<nav class="navbar navbar-expand-lg navbar-light bg-light">\
-      <a class="navbar-brand" href="#">\
-        <img src="your-logo-icon.png" width="30" height="30" alt="logo">\
-      </a>\
-      <div class="container-fluid text-center p-2 m-2 tasty-header">\
-        <h1 class="navbar-brand mb-0">Tasty Facts</h1>\
-      </div>\
-    </nav>');
-  });
+  var header = $('#header');
+  header.append('<nav class=" navbar-expand-lg navbar-light bg-light d-flex justify-content-center">\
+    <a class="navbar-brand text-center" href="#">\
+      <img src="place-holder.png" width="30" height="30" alt="logo">\
+    </a>\
+    <div class="container-fluid text-center p-2 m-2 tasty-header">\
+      <h1 class="navbar-brand mb-0">Tasty Facts</h1>\
+    </div>\
+  </nav>');
+});
 
-  $(document).ready(function() {
-    alert("jQuery is working");
-  });
+
+ 
 
   
