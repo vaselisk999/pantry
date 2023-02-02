@@ -16,7 +16,7 @@
 // Variable for searched country
 let country;
 //-----------------------------------------------
-// Header/Navbar with logo
+// Header/Navbar with logo and dropdown
 $(document).ready(function () {
   var header = $("#header");
   header.append(
@@ -27,9 +27,20 @@ $(document).ready(function () {
     <div class="container-fluid text-center p-2 m-2 tasty-header">\
       <h1 class=" mb-0">Tasty Facts</h1>\
     </div>\
+    <div class="dropdown">\
+  <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
+    My favorites\
+  </button>\
+  <div class="dropdown-menu">\
+    <button class="dropdown-item" type="button">Action</button>\
+  </div>\
+</div>\
   </nav>'
+  
   );
 });
+
+
 //-----------------------------------------------
 $('#search').on('click', function() {
   let country = $('#country').val();
@@ -40,3 +51,27 @@ function updateUI(data) {
   // Use the data as needed
   console.log(data);
 }
+
+// //function to create dropdown list (ANNA)
+// var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
+
+// function renderDropdownList() {
+
+//   favList.empty();
+
+//   for (var i = 0; i < favList.length; i++) {
+
+//       var newFavBtn = $("<button>");
+//       newHistoryButton.text(favList[i]);
+//       newHistoryButton.addClass("dropdown-menu show");
+
+//       favList.append(newFavBtn);
+//   }
+
+// };
+
+// //function for click event for favorites recipies in the downdrop list(ANNA)
+// favList.on("click", "button", function (event) {
+//   var buttonName = $(event.target).text();
+//           //function to display favorite recipe (buttonName)
+//       });
