@@ -38,3 +38,10 @@ $("#search").on("click", function () {
 
   console.log(country);
 });
+
+
+
+//popup cards 
+
+
+
