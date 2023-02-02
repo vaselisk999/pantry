@@ -3,7 +3,9 @@ $(function () {
     $('#world-map').vectorMap({
         map: 'world_mill_en',
         normalizeFunction: 'linear',
-        zoomMax: 8,
+        hoverColor: '#c9dfaf',
+        borderColor: '#818181',
+        borderOpacity: 0.25,
         onRegionClick: function (element, code, region) {
             var message = 'You clicked "'
                 + region
@@ -13,18 +15,21 @@ $(function () {
             alert(message);
         },
         onResize: function (event, width, height) {
-            console.log(event, "event")
-            console.log(width, "width")
-            console.log(height, "height")
+            console.log(event, "event");
+            console.log(width, "width");
+            console.log(height, "height");
         },
-        onRegionOver: function(e, code){
-
+        onRegionOver: function(event, code){
+            console.log(event, "event");
+            console.log(code, "code");
         },
-        onRegionOut: function(e, code){
-
+        onRegionOut: function(event, code){
+            console.log(event, "event");
+            console.log(code, "code");
         },
-        onViewportChange: function(e,  scale){
-
+        onViewportChange: function(event,  scale){
+            console.log(event, "event");
+            console.log(scale, "scale");
         }
     });
 
