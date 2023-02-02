@@ -47,3 +47,7 @@ h1 {
 }
 /* end of search button styles */
 
+#message-text{
+max-height: fit-content;
+height: 500px;
+}
