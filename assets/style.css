@@ -59,6 +59,43 @@ h1 {
 
 /* end of search button styles */
 
+/*Modal */
+
+.modal-content{
+width: 1000px;
+position: absolute;
+left: 50%;
+top: 50%;
+bottom: 50%;
+transform: translate(-50%, -50%);
+}
+
+.modal-dialog{
+
+  opacity: 0.8;
+ }
+
+#message-text {
+  background-color: #03989e;
+  border-radius: 50px;
+  height: 500px;
+  }
+
+ .btn{
+background-color: #ffbd59;
+color: #03989e;
+border-radius: 15px;
+ }
+
+  .btn:hover{
+background-color: #03989e;
+color: #ffbd59;
+border-radius: 15px;
+}
+
+
+/*End of modal styles */
+
 #dropdown-btn {
   background-color: #ffbd59;
   border-color: #03989e;
@@ -92,10 +129,6 @@ h1 {
   border-radius: 100px;
 }
 
-#message-text {
-  max-height: fit-content;
-  height: 500px;
-}
 
 /* map styles */
 #world-map {

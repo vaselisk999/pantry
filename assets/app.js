@@ -82,7 +82,7 @@ $('#search').on('click', function() {
 //           //function to display favorite recipe (buttonName)
 //       });
 
-//Modal//
+//Function for modal//
 
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
