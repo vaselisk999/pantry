@@ -1,29 +1,31 @@
 
-
 $(function () {
-    // map integration
-    // console.log(document.documentElement.clientHeight)
-    // console.log(document.documentElement.clientWidth)
-    // console.log(document.documentElement.scrollWidth)
-    // console.log(document.documentElement.scrollHeight)
-    // $('#world-map').attr("width", document.documentElement.scrollWidth)
-    // $('#world-map').attr("heigth", document.documentElement.scrollHeight)
-
     $('#world-map').vectorMap({
         map: 'world_mill_en',
-        updateSize: function(){
+        normalizeFunction: 'linear',
+        zoomMax: 8,
+        onRegionClick: function (element, code, region) {
+            var message = 'You clicked "'
+                + region
+                + '" which has the code: '
+                + code.toUpperCase();
+
+            alert(message);
+        },
+        onResize: function (event, width, height) {
+            console.log(event, "event")
+            console.log(width, "width")
+            console.log(height, "height")
+        },
+        onRegionOver: function(e, code){
+
+        },
+        onRegionOut: function(e, code){
+
+        },
+        onViewportChange: function(e,  scale){
 
         }
-    })
-
-    // window.onresize = function () {
-    //     setTimeout(function () {
-    //         worldMap.updateSize();
-    //     }, 200);
-    // }
-
-    // worldMap.updateSize();
-
-
+    });
 
 });
