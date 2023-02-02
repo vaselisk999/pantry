@@ -1,3 +1,9 @@
+/* root variables */
+:root{
+  --header-width: 80px;
+  --footer-width: 80px;
+}
+
 /* Header styles */
 header {
   background: #ffbd59;
@@ -14,8 +20,9 @@ h1 {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 40px;
+  top: 100px;
   width: 100%;
+  z-index: 1;
 }
 .input-field {
   height: 50px;
@@ -86,3 +93,24 @@ border-radius: 80px;
   border-radius: 100px;
   border-color: #03989e;
 }
+<<<<<<< HEAD
+=======
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  color: #03989e;
+  border-radius: 100px;
+}
+
+#message-text {
+  max-height: fit-content;
+  height: 500px;
+}
+
+/* map styles */
+#world-map {
+  width: 100vw;
+  height: calc( 100vh - (var(--footer-width) + var(--header-width)));
+}
+>>>>>>> 84dcb59a78975788e436210281db663238ce86de
