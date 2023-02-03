@@ -21,11 +21,8 @@ $(document).ready(function () {
   var header = $("#header");
   header.append(
     '<nav class=" navbar-expand-lg navbar-light  d-flex justify-content-center">\
-    <a class="navbar-brand text-center" href="#">\
-      <img src="place-holder.png" width="30" height="30" alt="logo">\
-    </a>\
-    <div class="container-fluid text-center p-2 m-2 tasty-header">\
-      <h1 class=" mb-0">Tasty Facts</h1>\
+    <div class="container-fluid tasty-header">\
+    <img src="images/3.png" alt="logo">\
     </div>\
     <div class="dropdown">\
   <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
