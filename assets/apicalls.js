@@ -9,7 +9,7 @@ async function getCountryData(country, callback) {
       const data = await response.json();
       callback(data);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
   
@@ -21,6 +21,6 @@ async function getRecipeData(country, callback) {
       const data = await response.json();
       callback(data);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }

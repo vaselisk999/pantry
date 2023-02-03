@@ -86,7 +86,7 @@ $('#search').on('click', function() {
 
 //Function for modal//
 
-$('#exampleModal').on('show.bs.modal', function (event) {
+$('#exampleModal').on('show.bs.modal', function (event) {             // we need to start using real #ids and classes for the elements, exampleModal, whatever,etc make it hard to keep working on the code.
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -98,8 +98,8 @@ $('#exampleModal').on('show.bs.modal', function (event) {
  
 //class SearchApiClass
 //ToDo find new name for class
-function SearchApiClass(country){
-  //country code
+function SearchApiClass(country){   // we should rename this function to something more meaningful, maybe searchCountryData?
+  //country code                        // it does not search the API,or a class, it just gets the data from the API
   this.country = country;
 
   //class method searche by click on country 

@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--Custom Header Font-->
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- map styles -->
+    <link
+      rel="stylesheet"
+      media="all"
+      href="./assets/css/jquery-jvectormap-2.0.5.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Tasty Facts</title>
+  </head>
 
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-   <meta name="Description" content="Enter your description here" />
-   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <!--Custom Header Font-->
-   <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-   <!-- Font Awesome  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-   <!-- map styles -->
-   <link rel="stylesheet" media="all" href="./assets/css/jquery-jvectormap-2.0.5.css" />
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="./assets/style.css">
-   <title>Tasty Facts</title>
-</head>
-
-<body>
-   <!-- Header -->
-   <header id="header">
-   </header>
-   <!-- Main -->
-   <main>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+    <!-- Main -->
+    <main>
       <!--Modal-->
       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Denmark</button> -->
       <!-- map wrapper conteiner -->
       <selection class="map-wrapper">
-         <div id="world-map"></div>
+        <div id="world-map"></div>
       </selection>
       <!-- Container for geo facts-->
       <!-- <section id="geoFacts"class="geo-container"></section> -->
       <!-- Container for recipes -->
       <!-- <section id="recipesContainer" class="recipes-container"></section> -->
+<<<<<<< HEAD
    </main>
    <div class="search-container">
       <input class="input-field" type="text" id="country" placeholder="Search for a country" />
+=======
+    </main>
+    <div class="search-container">
+      <input
+        class="input-field"
+        type="text"
+        id="country"
+        placeholder="     Search for a country"
+      />
+>>>>>>> 1fce352b657781df48021e196124d5b6fc6e4113
       <button id="search" class="search-btn">Search</button>
-   </div>
-   <!-- Footer -->
-   <footer></footer>
-   <!-- modal window -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+    <!-- Footer -->
+    <footer></footer>
+    <!-- modal window -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog" role="document">
+<<<<<<< HEAD
          <div class="modal-content">
             <div class="modal-header">
                <h5 class="modal-title" id="exampleModalLabel">Title</h5>
@@ -60,6 +87,25 @@
                   <div class="form-group">
                      <label for="message-text" class="col-form-label"></label>
                      <textarea class="form-control" id="message-text">
+=======
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label"></label>
+                <textarea class="form-control" id="message-text">
+>>>>>>> 1fce352b657781df48021e196124d5b6fc6e4113
 
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   
@@ -67,32 +113,38 @@
                     veritatis odit quidem iure qui, temporibus reiciendis? Ex repellat ab 
                     voluptas nemo vitae!
                 </textarea>
-                  </div>
-               </form>
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-         </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
       <!-- End of modal-->
-   </div>
-   <!-- External Libraries -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-   <!-- Custom JavaScript -->
+    </div>
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
 
-   <script src="./assets/key.js"></script>
-   <script src="./assets/apicalls.js"></script>
-   <script src="./assets/app.js"></script>
+    <script src="/key.js
+   "></script>
+    <script src="./assets/apicalls.js"></script>
+    <script src="./assets/app.js"></script>
 
-   <!-- countries list -->
-   <script src="./assets/js/countries.js"></script>
-   <!-- map related libs-->
-   <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
-   <script src="./assets/js/libs/world-mill-en.js"></script>
-   <script src="./assets/js/map.js"></script>
-</body>
-
+    <!-- countries list -->
+    <script src="./assets/js/countries.js"></script>
+    <!-- map related libs-->
+    <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
+    <script src="./assets/js/libs/world-mill-en.js"></script>
+    <script src="./assets/js/map.js"></script>
+  </body>
 </html>
