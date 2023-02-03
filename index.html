@@ -25,9 +25,8 @@
 <body>
    <!-- Header -->
    <header id="header">
-   <img src="images/3.png" alt ="logo">
+      <img src="images/3.png" alt="logo">
    </header>
-
    <!-- Main -->
    <main>
       <!--Modal-->
@@ -45,63 +44,44 @@
       <input class="input-field" type="text" id="country" placeholder="Search for a country" />
       <button id="search" class="search-btn">Search</button>
    </div>
-   <!-- Footer -->
-   <footer></footer>
-   <!-- modal window -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
 
+
+   <!-- modal window -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <div class="modal-body">
-               <form>
-                  <div class="form-group">
-                     <textarea class="form-control" id="message-text">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+            <div class="modal-body"> ... </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
       </div>
-     </div>
-      <!-- End of modal-->
-    <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <!-- Custom JavaScript -->
+   </div>
+   <!-- End of modal-->
 
-    <script src="/key.js
-   "></script>
-    <script src="./assets/apicalls.js"></script>
-    <script src="./assets/app.js"></script>
+   <!-- Footer -->
+   <footer></footer>
+   <!-- External Libraries -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+   <!-- Custom JavaScript -->
+   <!-- <script src="/key.js"></script> -->
+   <script src="./assets/apicalls.js"></script>
+   <script src="./assets/app.js"></script>
+   <!-- countries list -->
+   <script src="./assets/js/countries.js"></script>
+   <!-- map related libs-->
+   <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
+   <script src="./assets/js/libs/world-mill-en.js"></script>
+   <script src="./assets/js/map.js"></script>
+</body>
 
-    <!-- countries list -->
-    <script src="./assets/js/countries.js"></script>
-    <!-- map related libs-->
-    <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
-    <script src="./assets/js/libs/world-mill-en.js"></script>
-    <script src="./assets/js/map.js"></script>
-  </body>
 </html>
