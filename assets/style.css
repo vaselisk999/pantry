@@ -62,6 +62,7 @@ h1 {
 /*Modal */
 
 .modal-content{
+color: white;
 width: 1000px;
 position: absolute;
 left: 50%;
@@ -71,15 +72,17 @@ transform: translate(-50%, -50%);
 }
 
 .modal-dialog{
-
-  opacity: 0.8;
+color: white;
+ opacity: 0.8;
  }
 
 #message-text {
+  color:white;
   background-color: #03989e;
-  border-radius: 50px;
+  border-radius: 30px;
   height: 500px;
   }
+
 
  .btn{
 background-color: #ffbd59;
