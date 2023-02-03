@@ -36,7 +36,7 @@ $(document).ready(function () {
   </div>\
 </div>\
   </nav>'
-  
+
   );
 
 
@@ -44,19 +44,19 @@ $(document).ready(function () {
 
 //-----------------------------------------------
 // Event listener for the search button
-$('#search').on('click', function() {
+$('#search').on('click', function () {
   country = $('#country').val();
-  getCountryData(country, function(data) {
-  updateUI(data);
+  getCountryData(country, function (data) {
+    updateUI(data);
   });
   // 
-  getRecipeData(country, function(data) {
-  updateUI(data);
+  getRecipeData(country, function (data) {
+    updateUI(data);
   });
-  });
-  
-  // Function to update the UI with the data
-  function updateUI(data) {
+});
+
+// Function to update the UI with the data
+function updateUI(data) {
   console.log(data);
 }
 
@@ -95,32 +95,46 @@ $('#search').on('click', function() {
 //   modal.find('.modal-title').text('New message to ' + recipient)
 //   modal.find('.modal-body input').val(recipient)
 // })
- 
+
 //class SearchApiClass
 //ToDo find new name for class
-function SearchApiClass(country){   // we should rename this function to something more meaningful, maybe searchCountryData?
-  //country code                        // it does not search the API,or a class, it just gets the data from the API
-  this.country = country;
 
-  //class method searche by click on country 
-  this.searcheByCountry = function (){
-    var self = this;
+var searchApiobg = {
+  searcheByCountry: function (country) {
+    // console.log(data);
+    console.log(country);
 
-    //get country data
-    getCountryData(this.country, function(data){
+    getCountryData(country, function (data) {
       console.log(data);
-      console.log(self.country);
+      console.log(country);
       $("#exampleModal").modal('show');
-      $("#exampleModalLabel").text(self.country);
+      $("#exampleModalLabel").text(country);
     });
-
-  }
-
-
-  //class method 
-  this.searcheByInput = function(){
+  },
+  searcheByInput: function () {
 
   }
 }
 
-  
+
+// function SearchApiClass(country){   // we should rename this function to something more meaningful, maybe searchCountryData?
+//   //country code                        // it does not search the API,or a class, it just gets the data from the API
+//   this.country = country;
+
+//   //class method searche by click on country
+//   this.searcheByCountry = function (){
+//     var self = this;
+
+//     //get country data
+
+
+//   }
+
+
+//   //class method
+//   this.searcheByInput = function(){
+
+//   }
+// }
+
+
