@@ -53,6 +53,9 @@ $('#search').on('click', function () {
   getRecipeData(country, function (data) {
     updateUI(data);
   });
+
+  $("#exampleModal").modal('show');
+  $("#exampleModalLabel").text(country);
 });
 
 // Function to update the UI with the data
@@ -97,9 +100,11 @@ function updateUI(data) {
 // })
 
 //class SearchApiClass
-//ToDo find new name for class
 
-var searchApiobg = {
+
+
+
+var searchApiObj = {
   searcheByCountry: function (country) {
     // console.log(data);
     console.log(country);
@@ -107,34 +112,13 @@ var searchApiobg = {
     getCountryData(country, function (data) {
       console.log(data);
       console.log(country);
+
+
       $("#exampleModal").modal('show');
       $("#exampleModalLabel").text(country);
     });
-  },
-  searcheByInput: function () {
-
   }
 }
 
-
-// function SearchApiClass(country){   // we should rename this function to something more meaningful, maybe searchCountryData?
-//   //country code                        // it does not search the API,or a class, it just gets the data from the API
-//   this.country = country;
-
-//   //class method searche by click on country
-//   this.searcheByCountry = function (){
-//     var self = this;
-
-//     //get country data
-
-
-//   }
-
-
-//   //class method
-//   this.searcheByInput = function(){
-
-//   }
-// }
 
 
