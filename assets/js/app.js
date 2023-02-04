@@ -22,21 +22,22 @@ $(document).ready(function () {
   header.append(
     '<nav class=" navbar-expand-lg navbar-light  d-flex justify-content-center">\
     <div class="container-fluid tasty-header">\
-    <img src="images/3.png" alt="logo">\
+      <div class="title-icon-wrap">\
+        <h2 class="title-style">Tasty</h2>\
+        <img src="images/header-icon.png" id="header-icon"alt="logo">\
+        <h2 class="title-style">Facts</h2>\
+      </div>\
     </div>\
     <div class="dropdown">\
-  <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
-    My favorites\
-  </button>\
-  <div class="dropdown-menu">\
-    <button class="dropdown-item" type="button">Action</button>\
-  </div>\
-</div>\
+      <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
+        My favorites\
+      </button>\
+      <div class="dropdown-menu">\
+        <button class="dropdown-item" type="button">Action</button>\
+      </div>\
+    </div>\
   </nav>'
-
   );
-
-
 });
 
 //-----------------------------------------------

@@ -13,11 +13,28 @@ nav {
 header {
   background: #ffbd59;
   height: var(--header-heigth);
-}
+ 
 
-header img {
-display: flex;
-height: 80px;
+}
+/* Tasty-Icon-Facts div */
+.title-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* lime-icon*/
+#header-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+  
+}
+/* Tasty-Facts */
+.title-style{
+  font-family: "norwester", "sans-serif";
+  font-size: 50px;
+  color: #03989e;
 
 }
 .tasty-header{
