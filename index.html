@@ -29,9 +29,7 @@
    </header>
    <!-- Main -->
    <main>
-      <!--Modal-->
-      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Denmark</button> -->
-      <!-- map wrapper conteiner -->
+   <!-- map wrapper conteiner -->
       <selection class="map-wrapper">
          <div id="world-map"></div>
       </selection>
@@ -44,44 +42,86 @@
       <input class="input-field" type="text" id="country" placeholder="Search for a country" />
       <button id="search" class="search-btn">Search</button>
    </div>
-
-
-   <!-- modal window -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Modal window -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-               </button>
+               <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+               <span aria-hidden="true">&times;</span>
             </div>
-            <div class="modal-body"> ... </div>
+            <div class="modal-body">
+               <form>
+                  <div class="form-group">
+                     <label for="message-text" class="col-form-label"></label>
+                     <div class="form-control" id="message-text">
+                        <div class="writing" id="writing-space">
+                           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae a nesciunt ab natus
+                              voluptatum ipsum. Dolores, consequuntur! Molestias dignissimos libero,
+                              tenetur itaque deleniti earum laudantium ex facere explicabo modi sint.
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <!--cards for recipes-->
+                        <div class="row">
+                           <div class="card" style="width: 18rem;">
+                              <img src="..." class="card-img-top" alt="...">
+                              <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                 <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                 <a href="#" class="btn btn-primary">Add to Favourites</a>
+                              </div>
+                           </div>
+                           <div class="card" style="width: 18rem;">
+                              <img src="..." class="card-img-top" alt="...">
+                              <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                 <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                 <a href="#" class="btn btn-primary">Add to Favourites</a>
+                              </div>
+                           </div>
+                           <div class="card" style="width: 18rem;">
+                              <img src="..." class="card-img-top" alt="...">
+                              <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                 <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                 <a href="#" class="btn btn-primary">Add to Favourites</a>
+                              </div>
+                           </div>
+                      
+                           <!--end of cards for recipes-->
+                        </div>
+                     </div>
+                  </div>
+            </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary">Save changes</button>
+
             </div>
          </div>
+         </div>
       </div>
-   </div>
-   <!-- End of modal-->
+      <!-- End of modal-->
 
-   <!-- Footer -->
-   <footer></footer>
-   <!-- External Libraries -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-   <!-- Custom JavaScript -->
-   <!-- <script src="/key.js"></script> -->
-   <script src="./assets/apicalls.js"></script>
-   <script src="./assets/app.js"></script>
-   <!-- countries list -->
-   <script src="./assets/js/countries.js"></script>
-   <!-- map related libs-->
-   <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
-   <script src="./assets/js/libs/world-mill-en.js"></script>
-   <script src="./assets/js/map.js"></script>
+      <!-- Footer -->
+      <footer></footer>
+      <!-- External Libraries -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+      <!-- Custom JavaScript -->
+      <!-- <script src="/key.js"></script> -->
+      <script src="./assets/apicalls.js"></script>
+      <script src="./assets/app.js"></script>
+      <!-- countries list -->
+      <script src="./assets/js/countries.js"></script>
+      <!-- map related libs-->
+      <script src="./assets/js/libs/jquery-jvectormap-2.0.5.min.js"></script>
+      <script src="./assets/js/libs/world-mill-en.js"></script>
+      <script src="./assets/js/map.js"></script>
 </body>
 
 </html>
