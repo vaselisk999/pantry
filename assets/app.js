@@ -99,25 +99,86 @@ function updateUI(data) {
 //   modal.find('.modal-body input').val(recipient)
 // })
 
-//class SearchApiClass
+
+// seacrch by map with country parameters
+function searcheByCountry(country) {
+  //show modal window
+  $("#exampleModal").modal('show');
+  //get country data request
+  getCountryData(country, function (data) {
+    // coutry information block
+    createCountryInformationConteiner(data, country);
+  });
+
+  //get recepies request
+  getRecipeData(country, function (data) {
+    console.log(data);
+    createRecepiesConteiner(data)
+  });
+}
 
 
+//displais country information conteiner
+function createCountryInformationConteiner(data, country) {
+  console.log(data[0])
+  $("#exampleModalLabel").text(country);
 
+  var rowEl = $("<div>");
+  rowEl.addClass("row");
 
-var searchApiObj = {
-  searcheByCountry: function (country) {
-    // console.log(data);
-    console.log(country);
+  var secondRowEl = $("<div>");
+  secondRowEl.addClass("cards");
 
-    getCountryData(country, function (data) {
-      console.log(data);
-      console.log(country);
+  var infoEl = $("<div>");
+  infoEl.addClass("col-6");
+  var flagWrapperEl = $("<div>");
+  flagWrapperEl.addClass("col-6");
 
+  var imgEl = $("<img/>");
+  imgEl.attr("alt", data[0].capital[0]);
+  imgEl.attr("src", data[0].flags.png);
+  imgEl.attr("style", "height: 100px; float: right");
 
-      $("#exampleModal").modal('show');
-      $("#exampleModalLabel").text(country);
-    });
-  }
+  var capitalEl = $("<p>Capital: " + data[0].capital[0] + " </p>");
+  var regionEl = $("<p>Region: " + data[0].region + " </p>");
+  var currenciesEl = $("<p>Currencies: " + data[0].currencies.DKK.name  + " </p>");
+
+  infoEl.append(capitalEl);
+  infoEl.append(regionEl);
+  infoEl.append(currenciesEl);
+
+  flagWrapperEl.append(imgEl);
+
+  rowEl.append(infoEl);
+  rowEl.append(flagWrapperEl);
+  $(".modal-body").prepend(rowEl);
+  $(".modal-body").append(secondRowEl);
+}
+
+function createRecepiesConteiner(data) {
+  console.log(data.hits )
+  var cardEl = $("<div>");
+  cardEl.addClass("card");
+  cardEl.attr("style", "width: 18rem;");
+
+  var imgEl = $("<img>");
+  imgEl.attr("alt", "");
+  imgEl.attr("src", image);
+  var cardBodyEl = $("<div>");
+  var h5El = $("<h5>");
+  var pEl = $("<p>");
+  var aEl = $("<a>");
+
+{/* <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> */}
+cardEl.append();
+$(".cards").append(cardEl);
 }
 
 
