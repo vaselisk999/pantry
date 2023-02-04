@@ -106,7 +106,7 @@ color: white;
   color:white;
   background-color: #03989e;
   border-radius: 30px;
-  height: 500px;
+  height: 600px;
   }
 
  .btn{
@@ -157,14 +157,13 @@ border-radius: 15px;
   
   /* Float four columns side by side */
   .card-body {
-   display: flex;
+    position: relative;
+    display: flex;
    flex-wrap: wrap;
     gap: 16px;
     
+    
   }
-  
-  
-  
   /* Clear floats after the columns */
   .row:after {
     content: "";
