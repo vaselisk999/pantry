@@ -64,7 +64,7 @@ function updateUI(data) {
   let countryData = data[0];
   console.log(countryData);
   // Update the modal with the data
-  $('#modalBody').html(`
+  $('#writing-space').html(`
     <img class="flag"src="${countryData.flags.svg}">
     
     <p>Capital: ${countryData.capital[0]}</p>
@@ -73,6 +73,11 @@ function updateUI(data) {
 
   `);
 }
+
+
+
+
+
 
 
 // //function to create dropdown list (ANNA)
