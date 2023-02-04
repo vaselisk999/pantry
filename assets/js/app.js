@@ -60,14 +60,17 @@ $('#search').on('click', function () {
 // Function to update the UI with the data
 
 function updateUI(data) {
-  console.log(data);
+  
   let countryData = data[0];
+  console.log(countryData);
   // Update the modal with the data
-  $('#modal-body').html(`
-    <img src="${countryData.flags.png}">
-    <h3>Country: ${countryData.name.common}</h3>
+  $('#modalBody').html(`
+    <img class="flag"src="${countryData.flags.svg}">
+    
     <p>Capital: ${countryData.capital[0]}</p>
     <p>Population: ${countryData.population}</p>
+    <p>Region: ${countryData.region}</p>
+
   `);
 }
 

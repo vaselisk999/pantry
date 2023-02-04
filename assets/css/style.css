@@ -121,7 +121,10 @@ background-color: #03989e;
 color: #ffbd59;
 border-radius: 15px;
 }
-
+.flag {
+  max-width: 200px;
+  height: auto;
+}
 
 /*End of modal styles */
 
