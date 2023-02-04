@@ -156,29 +156,44 @@ function createCountryInformationConteiner(data, country) {
 }
 
 function createRecepiesConteiner(data) {
-  console.log(data.hits )
-  var cardEl = $("<div>");
-  cardEl.addClass("card");
-  cardEl.attr("style", "width: 18rem;");
+  data.hits.forEach((element, index) => {
+    console.log(element.recipe)
+    console.log(index)
+    if(index < 3){
+      var cardEl = $("<div>");
+      cardEl.addClass("card");
+      cardEl.attr("style", "width: 18rem;");
 
-  var imgEl = $("<img>");
-  imgEl.attr("alt", "");
-  imgEl.attr("src", image);
-  var cardBodyEl = $("<div>");
-  var h5El = $("<h5>");
-  var pEl = $("<p>");
-  var aEl = $("<a>");
 
-{/* <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> */}
-cardEl.append();
-$(".cards").append(cardEl);
+      var imgEl = $("<img>");
+      imgEl.attr("alt", element.recipe.label);
+      imgEl.addClass("card-img-top");
+      imgEl.attr("src", element.recipe.image);
+
+      var cardBodyEl = $("<div>");
+      cardBodyEl.addClass("card-body");
+
+      var h5El = $("<h5>");
+      h5El.addClass("card-title");
+      var pEl = $("<p>");
+      pEl.addClass("card-text");
+      pEl.text(
+        "dishTyp: " +  element.recipe.dishTyp.join() +
+        "cautions: " + element.recipe.cautions.join(", ")
+      );
+      var aEl = $("<a>");
+      aEl.addClass("btn btn-primary");
+      aEl.text("add to favorite");
+
+      cardEl.append(imgEl);
+      cardEl.append(cardBodyEl);
+      cardBodyEl.append(h5El);
+      cardBodyEl.append(pEl);
+      cardBodyEl.append(aEl);
+      $(".cards").append(cardEl);
+    }
+  });
+
 }
 
 
