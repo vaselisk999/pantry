@@ -6,8 +6,8 @@
         borderOpacity: 0.25,
         
         onRegionClick: function (event, code) {
-            var sr = new SearchApiClass(countries[code]);
-            sr.searcheByCountry();
+            //path country name to searchApiobg
+            searchApiObj.searcheByCountry(countries[code]);
         },
         onResize: function (event, width, height) {
             // for test pourpose

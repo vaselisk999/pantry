@@ -21,44 +21,59 @@ $(document).ready(function () {
   var header = $("#header");
   header.append(
     '<nav class=" navbar-expand-lg navbar-light  d-flex justify-content-center">\
-    <a class="navbar-brand text-center" href="#">\
-      <img src="place-holder.png" width="30" height="30" alt="logo">\
-    </a>\
-    <div class="container-fluid text-center p-2 m-2 tasty-header">\
-      <h1 class=" mb-0">Tasty Facts</h1>\
+    <div class="container-fluid tasty-header">\
+      <div class="title-icon-wrap">\
+        <h2 class="title-style">Tasty</h2>\
+        <img src="images/header-icon.png" id="header-icon"alt="logo">\
+        <h2 class="title-style">Facts</h2>\
+      </div>\
     </div>\
     <div class="dropdown">\
-  <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
-    My favorites\
-  </button>\
-  <div class="dropdown-menu">\
-    <button class="dropdown-item" type="button">Action</button>\
-  </div>\
-</div>\
+      <button id = "dropdown-btn" class=" btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">\
+        My favorites\
+      </button>\
+      <div class="dropdown-menu">\
+        <button class="dropdown-item" type="button">Action</button>\
+      </div>\
+    </div>\
   </nav>'
-  
   );
-
-
 });
 
 //-----------------------------------------------
 // Event listener for the search button
-$('#search').on('click', function() {
+$('#search').on('click', function () {
   country = $('#country').val();
-  getCountryData(country, function(data) {
-  updateUI(data);
+  searchApiObj.searcheByCountry(country);
+  getCountryData(country, function (data) {
+    updateUI(data);
   });
   // 
-  getRecipeData(country, function(data) {
-  updateUI(data);
+  getRecipeData(country, function (data) {
+    updateUI(data);
   });
-  });
+
+  $("#exampleModal").modal('show');
+  $("#exampleModalLabel").text(country);
+});
+
+// Function to update the UI with the data
+
+function updateUI(data) {
   
-  // Function to update the UI with the data
-  function updateUI(data) {
-  console.log(data);
+  let countryData = data[0];
+  console.log(countryData);
+  // Update the modal with the data
+  $('#modalBody').html(`
+    <img class="flag"src="${countryData.flags.svg}">
+    
+    <p>Capital: ${countryData.capital[0]}</p>
+    <p>Population: ${countryData.population}</p>
+    <p>Region: ${countryData.region}</p>
+
+  `);
 }
+
 
 // //function to create dropdown list (ANNA)
 // var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
@@ -95,32 +110,23 @@ $('#search').on('click', function() {
 //   modal.find('.modal-title').text('New message to ' + recipient)
 //   modal.find('.modal-body input').val(recipient)
 // })
- 
+
 //class SearchApiClass
-//ToDo find new name for class
-function SearchApiClass(country){   // we should rename this function to something more meaningful, maybe searchCountryData?
-  //country code                        // it does not search the API,or a class, it just gets the data from the API
-  this.country = country;
 
-  //class method searche by click on country 
-  this.searcheByCountry = function (){
-    var self = this;
 
-    //get country data
-    getCountryData(this.country, function(data){
-      console.log(data);
-      console.log(self.country);
+
+
+var searchApiObj = {
+  searcheByCountry: function (country) {
+    getCountryData(country, function (data) {
+      updateUI(data);
+
       $("#exampleModal").modal('show');
-      $("#exampleModalLabel").text(self.country);
+      $("#exampleModalLabel").text(country);
     });
-
-  }
-
-
-  //class method 
-  this.searcheByInput = function(){
-
   }
 }
 
-  
+
+
+
