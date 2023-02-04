@@ -44,6 +44,7 @@ $(document).ready(function () {
 // Event listener for the search button
 $('#search').on('click', function () {
   country = $('#country').val();
+  searchApiObj.searcheByCountry(country);
   getCountryData(country, function (data) {
     updateUI(data);
   });
@@ -57,9 +58,19 @@ $('#search').on('click', function () {
 });
 
 // Function to update the UI with the data
+
 function updateUI(data) {
   console.log(data);
+  let countryData = data[0];
+  // Update the modal with the data
+  $('#modal-body').html(`
+    <img src="${countryData.flags.png}">
+    <h3>Country: ${countryData.name.common}</h3>
+    <p>Capital: ${countryData.capital[0]}</p>
+    <p>Population: ${countryData.population}</p>
+  `);
 }
+
 
 // //function to create dropdown list (ANNA)
 // var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
@@ -104,19 +115,15 @@ function updateUI(data) {
 
 var searchApiObj = {
   searcheByCountry: function (country) {
-    // console.log(data);
-    console.log(country);
-
     getCountryData(country, function (data) {
-      console.log(data);
-      console.log(country);
-
+      updateUI(data);
 
       $("#exampleModal").modal('show');
       $("#exampleModalLabel").text(country);
     });
   }
 }
+
 
 
 
