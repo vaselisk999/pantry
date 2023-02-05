@@ -84,13 +84,13 @@ event.preventDefault();
 
 var recipeName = $(event.target);
 favList.push(recipeName);
-localStorage.setItem("My Favorites", JSON.stringify(recipeName));
+localStorage.setItem("My favorites", JSON.stringify(recipeName));
 //localStorage.setItem("My Favorites", JSON.stringify(favList));
 renderDropdownList();
 
 });
 
-var favList = JSON.parse(localStorage.getItem("My Favorites")) || [];
+var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
 
 var dropdownList = $(".downdrop-menu");
 
