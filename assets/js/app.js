@@ -51,6 +51,7 @@ $('#search').on('click', function () {
   // 
   getRecipeData(country, function (data) {
     updateUI(data);
+    console.log(data);
   });
 
   $("#exampleModal").modal('show');
