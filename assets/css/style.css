@@ -1,5 +1,5 @@
 /* root variables */
-:root{
+:root {
   --header-heigth: 80px;
   --footer-heigth: 80px;
 }
@@ -8,36 +8,41 @@
 nav {
   height: 80px;
   justify-items: center;
-  
+
 }
+
 header {
   background: #ffbd59;
   height: var(--header-heigth);
- 
+
 
 }
+
 /* Tasty-Icon-Facts div */
 .title-icon-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 /* lime-icon*/
 #header-icon {
   height: 50px;
   width: 50px;
   margin-right: 5px;
   margin-left: 5px;
-  
+
 }
+
 /* Tasty-Facts */
-.title-style{
+.title-style {
   font-family: "norwester", "sans-serif";
   font-size: 50px;
   color: #03989e;
 
 }
-.tasty-header{
+
+.tasty-header {
   width: 60%;
   display: flex;
   justify-content: end;
@@ -87,40 +92,41 @@ header {
 
 /*Modal */
 
-.modal-content{
-color: white;
-width: 1000px;
-position: absolute;
-left: 50%;
-top: 50%;
-bottom: 50%;
-transform: translate(-50%, -50%);
+.modal-content {
+  color: white;
+  width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.modal-dialog{
-color: white;
- opacity: 0.8;
- }
+.modal-dialog {
+  color: white;
+  opacity: 0.8;
+}
 
 #message-text {
-  color:white;
+  color: white;
   background-color: #03989e;
   border-radius: 30px;
   height: 600px;
-  }
-
-
- .btn{
-background-color: #ffbd59;
-color: #03989e;
-border-radius: 15px;
- }
-
-  .btn:hover{
-background-color: #03989e;
-color: #ffbd59;
-border-radius: 15px;
 }
+
+
+.btn {
+  background-color: #ffbd59;
+  color: #03989e;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  background-color: #03989e;
+  color: #ffbd59;
+  border-radius: 15px;
+}
+
 .flag {
   max-width: 200px;
   height: auto;
@@ -132,70 +138,75 @@ border-radius: 15px;
 /*cards styles*/
 
 
-.row{
+.row {
   display: flex;
   justify-content: space-around;
   padding-left: 15px;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #ffbd59;
   color: #03989e;
   box-shadow: #505050;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
   background-color: #03989e;
   color: #ffbd59;
   border-radius: 15px;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  }
-  
+}
 
-  /* Remove extra left and right margins, due to padding in columns */
-  .row {margin: 0 -5px;}
-  
-  
-  /* Float four columns side by side */
-  .card-body {
-    position: relative;
-    display: flex;
-   flex-wrap: wrap;
-    gap: 16px;
-    
-    
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+}
+
+
+/* Float four columns side by side */
+.card-body {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #ffbd59;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .row {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-    padding: 16px;
-    text-align: center;
-    background-color: #ffbd59;
-  }
-  
-  /* Responsive columns - one column layout (vertical) on small screens */
-  @media screen and (max-width: 600px) {
-    .row {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /*end of cards styles*/
+}
+
+/*end of cards styles*/
 
 #dropdown-btn {
   background-color: #03989e;
-  border-color:  #ffbd59;
+  border-color: #ffbd59;
   border-radius: 100px;
-  color:  #ffbd59;
+  color: #ffbd59;
   border: solid 2px;
   margin-right: 20px;
   height: 50px;
@@ -223,18 +234,19 @@ border-radius: 15px;
   color: #03989e;
   border-radius: 100px;
 }
+
 /*End of dropdown styles */
 
 
 /* map styles */
 #world-map {
-  height: calc( 100vh - (var(--footer-heigth) + var(--header-heigth)));
+  height: calc(100vh - (var(--footer-heigth) + var(--header-heigth)));
   padding: 60px;
   background-color: #505050;
 }
 
 /* footer styles */
-footer{
+footer {
   background-color: #ffbd59;
   height: var(--footer-heigth);
 }

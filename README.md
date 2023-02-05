@@ -1,6 +1,6 @@
 # tasty-facts
 
-## Description
+## About the project
 
 The purpose of this app is to enable user to find a recipes from around the world, while
 learning interesting facts about the country of choice.
@@ -13,7 +13,9 @@ I WANT to find interesting facts about the chosen country, while finding new rec
 
 SO THAT I can learn some intersting information about different countries and prepare new meals.
 
-## Usage
+## Built With
+
+
 
 ## API Used
 
