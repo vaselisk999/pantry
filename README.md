@@ -15,8 +15,6 @@ SO THAT I can learn some intersting information about different countries and pr
 
 ## Built With
 
-
-
 ## API Used
 
 ## Team Members

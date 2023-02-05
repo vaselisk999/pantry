@@ -68,7 +68,7 @@ function updateUI(data) {
   $('#writing-space').html(`
     <img class="flag"src="${countryData.flags.svg}">
     
-    <p>Capital: ${countryData.capital}</p>
+    <p>Capital: ${countryData.capital[0]}</p>
     <p>Population: ${countryData.population}</p>
     <p>Region: ${countryData.region}</p>
 
@@ -90,7 +90,7 @@ $(".card-body").on("click", "button", function (event) {
 });
 
 var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
-var dropdownList = $(".downdrop-menu");
+var dropdownList = $(".dropdown-menu");
 
 function renderDropdownList() {
   dropdownList.empty();
