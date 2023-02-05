@@ -81,22 +81,38 @@ function updateUI(data) {
 
 
 // //function to create dropdown list (ANNA)
-// var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
+var addToFavoriteBtn = $(".addToFavBtn");
+var recipeCardTitle = $(".card-title");
+$(".card-body").on("click", "button", function (event) {
 
-// function renderDropdownList() {
+event.preventDefault();
 
-//   favList.empty();
+var recipeName = $(event.target);
+favList.push(recipeName);
+localStorage.setItem("My Favorites", JSON.stringify(recipeName));
 
-//   for (var i = 0; i < favList.length; i++) {
+renderDropdownList();
 
-//       var newFavBtn = $("<button>");
-//       newHistoryButton.text(favList[i]);
-//       newHistoryButton.addClass("dropdown-menu show");
+});
 
-//       favList.append(newFavBtn);
-//   }
+var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
+var dropdownList = $(".downdrop-menu");
 
-// };
+function renderDropdownList() {
+
+  dropdownList.empty();
+
+  for (var i = 0; i < favList.length; i++) {
+
+      var newFavBtn = $("<button>");
+      newFavBtn.text(favList[i]);
+      newFavBtn.addClass("dropdown-item");
+      newFavBtn.attr("type", "button");
+
+      dropdownList.append(newFavBtn);
+  }
+
+};
 
 // //function for click event for favorites recipies in the downdrop list(ANNA)
 // favList.on("click", "button", function (event) {
