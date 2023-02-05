@@ -76,7 +76,7 @@ function updateUI(data) {
 }
 
 
-//function for getting recipes
+//function for displaying recipes in cards
 
 var addToFavoriteBtn = $(".addToFavBtn");
 var recipeCardTitle = $(".card-title");
