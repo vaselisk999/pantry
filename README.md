@@ -7,7 +7,7 @@ learning interesting facts about the country of choice.
 
 
 ## User Story
-AS a person who enjoy travelling and finding new recipes from around the world.
+AS a person who enjoys travelling and finding new recipes from around the world.
 
 I WANT to find interesting facts about the chosen country, while finding new recipes.
 

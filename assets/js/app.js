@@ -74,13 +74,8 @@ function updateUI(data) {
   `);
 }
 
+// function to add recipes
 
-
-
-
-
-
-// //function to create dropdown list (ANNA)
 var addToFavoriteBtn = $(".addToFavBtn");
 var recipeCardTitle = $(".card-title");
 $(".card-body").on("click", "button", function (event) {
@@ -90,12 +85,13 @@ event.preventDefault();
 var recipeName = $(event.target);
 favList.push(recipeName);
 localStorage.setItem("My Favorites", JSON.stringify(recipeName));
-
+//localStorage.setItem("My Favorites", JSON.stringify(favList));
 renderDropdownList();
 
 });
 
-var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
+var favList = JSON.parse(localStorage.getItem("My Favorites")) || [];
+
 var dropdownList = $(".downdrop-menu");
 
 function renderDropdownList() {
@@ -110,9 +106,14 @@ function renderDropdownList() {
       newFavBtn.attr("type", "button");
 
       dropdownList.append(newFavBtn);
-  }
+    }
 
-};
+  };
+  
+
+
+
+
 
 // //function for click event for favorites recipies in the downdrop list(ANNA)
 // favList.on("click", "button", function (event) {
