@@ -81,7 +81,7 @@ function updateUI(data) {
 
 
 // //function to create dropdown list (ANNA)
-//var addToFavoriteBtn = $(".addToFavBtn");
+var addToFavoriteBtn = $(".addToFavBtn");
 var recipeCardTitle = $(".card-title");
 $(".card-body").on("click", "button", function (event) {
 
