@@ -81,12 +81,13 @@ function updateUI(data) {
 
 
 // //function to create dropdown list (ANNA)
-var addToFavoriteBtn = $(".addToFavBtn");
-addToFavoriteBtn.on("click", function (event) {
+//var addToFavoriteBtn = $(".addToFavBtn");
+var recipeCardTitle = $(".card-title");
+$(".card-body").on("click", "button", function (event) {
 
 event.preventDefault();
 
-var recipeName = $(".card-title").text();
+var recipeName = $(event.target);
 favList.push(recipeName);
 localStorage.setItem("My Favorites", JSON.stringify(recipeName));
 
