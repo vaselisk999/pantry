@@ -68,7 +68,7 @@ function updateUI(data) {
   $('#writing-space').html(`
     <img class="flag"src="${countryData.flags.svg}">
     
-    <p>Capital: ${countryData.capital[0]}</p>
+    <p>Capital: ${countryData.capital}</p>
     <p>Population: ${countryData.population}</p>
     <p>Region: ${countryData.region}</p>
 
