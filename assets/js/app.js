@@ -57,6 +57,38 @@ $('#search').on('click', function () {
   $("#exampleModal").modal('show');
   $("#exampleModalLabel").text(country);
 });
+//-----------------------------------------------
+// fucntion to populate cards with recipes from API
+function updateCardInformation(getData, country) {
+  getData(country, (data) => {
+    let recipes = data.hits;
+    let recipe1 = recipes[0].recipe;
+    let recipe2 = recipes[1].recipe;
+    let recipe3 = recipes[2].recipe;
+    
+    let cards = document.querySelectorAll(".card");
+    cards[0].querySelector(".card-img-top").setAttribute("src", recipe1.img);
+    cards[0].querySelector(".card-body").innerHTML = `
+      <h5 class="card-title">${recipe1.title}</h5>
+      <p class="card-text">${recipe1.description}</p>
+      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
+    `;
+  
+    cards[1].querySelector(".card-img-top").setAttribute("src", recipe2.img);
+    cards[1].querySelector(".card-body").innerHTML = `
+      <h5 class="card-title">${recipe2.title}</h5>
+      <p class="card-text">${recipe2.description}</p>
+      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
+    `;
+  
+    cards[2].querySelector(".card-img-top").setAttribute("src", recipe3.img);
+    cards[2].querySelector(".card-body").innerHTML = `
+      <h5 class="card-title">${recipe3.title}</h5>
+      <p class="card-text">${recipe3.description}</p>
+      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
+    `;
+  });
+}
 
 // Function to update the UI with the data
 
