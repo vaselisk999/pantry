@@ -8,7 +8,6 @@
 nav {
   height: 80px;
   justify-items: center;
-
 }
 
 header {
@@ -61,6 +60,7 @@ header {
 .input-field {
   height: 50px;
   width: 250px;
+  padding: 5px 10px;
   border-radius: 50px;
   border: solid 2px #ffbd59;
 }
@@ -136,8 +136,6 @@ header {
 
 
 /*cards styles*/
-
-
 .row {
   display: flex;
   justify-content: space-around;
