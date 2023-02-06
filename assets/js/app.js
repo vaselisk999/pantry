@@ -33,7 +33,6 @@ $(document).ready(function () {
         My favorites\
       </button>\
       <div class="dropdown-menu">\
-        <button class="dropdown-item" type="button">Action</button>\
       </div>\
     </div>\
   </nav>'
@@ -104,20 +103,23 @@ function updateCardInformation(getData, country) {
   });
 }
 
-//function to add recipe
+//function to add recipe to favorite dropdownlist
 
 var addToFavoriteBtn = $(".addToFavorite");
 var recipeCardTitle = $(".recipeHeader");
 var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
 var dropdownList = $(".dropdown-menu");
 
-$(".recipeContent").on("click", "button", function (event) {
+
+addToFavoriteBtn.each(function(){
+$(this).on("click", function (event) {
   event.preventDefault();
 
   var recipeName = $(event.target).text();
   favList.push(recipeName);
   localStorage.setItem("My favorites", JSON.stringify(favList));
   renderDropdownList();
+})
 });
 
 
@@ -134,6 +136,8 @@ function renderDropdownList() {
     dropdownList.append(newFavBtn);
   }
 };
+//////
+
 
 function searcheByCountry(country) {
   $(".modal-body").empty();
