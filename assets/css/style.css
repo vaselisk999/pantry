@@ -31,6 +31,7 @@ header {
   margin-right: 5px;
   margin-left: 5px;
 
+
 }
 
 /* Tasty-Facts */
@@ -39,6 +40,7 @@ header {
   font-size: 50px;
   color: #03989e;
 
+
 }
 
 .tasty-header {
@@ -46,6 +48,7 @@ header {
   display: flex;
   justify-content: end;
 }
+
 
 /*  input styles */
 .search-container {
@@ -76,8 +79,11 @@ header {
   padding: 0;
   margin-left: 20px;
   color: #ffbd59;
+  
 }
-
+.input-field{
+text-align: center;
+}
 .search-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -91,12 +97,13 @@ header {
 /* end of search button styles */
 
 /*Modal */
-.modal-header{
-background-color: #ffbd59;
-opacity: 0.9;
+.modal-header {
+  background-color: #ffbd59;
+  opacity: 0.9;
 }
+
 .modal-dialog {
-  color:#03989e;
+  color: #03989e;
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -107,39 +114,41 @@ opacity: 0.9;
   min-height: 100%;
   width: 100%;
   border-radius: 0;
-   background-color: white;
-   opacity: 0.9;
+  background-color: white;
+  opacity: 0.9;
   border-radius: 20px;
   /* color: white; */
 }
 
-.modal-dialog  .btn {
+
+.modal-dialog .btn {
   background-color: #ffbd59;
   color: #03989e;
   border-radius: 15px;
 }
 
-.modal-dialog  .btn:hover {
+.modal-dialog .btn:hover {
   background-color: #03989e;
   color: #ffbd59;
   border-radius: 15px;
 }
 
-.modal-dialog  .flag {
+.modal-dialog .flag {
   max-width: 200px;
   height: auto;
 }
 
-.modal-dialog  .card-img {
+.modal-dialog .card-img {
   max-width: 150px;
   height: auto;
   float: left;
   margin: 0;
 }
- .modal-footer {
- background-color: #ffbd59;
- opacity: 0.9;
- }
+
+.modal-footer {
+  background-color: #ffbd59;
+  opacity: 0.9;
+}
 
 /*End of modal styles */
 
@@ -166,37 +175,6 @@ opacity: 0.9;
 }
 
 
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-  margin: 0 -5px;
-}
-
-
-/* Float four columns side by side */
-.card-body {
-  /* position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px; */
-
-  text-align: left;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #ffbd59;
-}
 
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
