@@ -93,6 +93,7 @@ header {
 /*Modal */
 
 .modal-dialog {
+  color:#03989e;
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -103,7 +104,8 @@ header {
   min-height: 100%;
   width: 100%;
   border-radius: 0;
-  /* background-color: #03989e; */
+   background-color: white;
+   opacity: 0.9;
   border-radius: 20px;
   /* color: white; */
 }

@@ -1,5 +1,10 @@
 # tasty-facts
 
+![ contributors ](https://img.shields.io/badge/contributors-4-blue)
+
+
+
+
 ## About the project
 
 The purpose of this app is to enable user to find a recipes from around the world, while
@@ -15,7 +20,9 @@ SO THAT I can learn some intersting information about different countries and pr
 
 ## Built With
 
-## API Used
+
+
+## APIs Used
 
 ## Team Members
 
