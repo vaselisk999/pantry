@@ -57,6 +57,25 @@ $('#search').on('click', function () {
   $("#exampleModal").modal('show');
   $("#exampleModalLabel").text(country);
 });
+
+// Function to update the UI with the data
+
+function updateUI(data) {
+  let countryData = data[0];
+
+  // Update the modal with the data
+  $('#writing-space').html(`
+    <img class="flag"src="${countryData.flags.svg}">
+    
+    <p>Capital: ${countryData.capital[0]}</p>
+    <p>Population: ${countryData.population}</p>
+    <p>Region: ${countryData.region}</p>
+  `);
+
+  getRecipeData(countryData.name, function(recipeData) {
+    updateCardInformation(recipeData[0], recipeData[1], recipeData[2]);
+  });
+}
 //-----------------------------------------------
 // fucntion to populate cards with recipes from API
 function updateCardInformation(getData, country) {
@@ -90,26 +109,9 @@ function updateCardInformation(getData, country) {
   });
 }
 
-// Function to update the UI with the data
 
-function updateUI(data) {
-  
-  let countryData = data[0];
-  
-  // Update the modal with the data
-  $('#writing-space').html(`
-    <img class="flag"src="${countryData.flags.svg}">
-    
-    <p>Capital: ${countryData.capital[0]}</p>
-    <p>Population: ${countryData.population}</p>
-    <p>Region: ${countryData.region}</p>
 
-  `);
-}
 
-getRecipeData(country, function (data) {
-  console.log(data);
-});
 
 
 //function to add recipe
