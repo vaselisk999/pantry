@@ -40,24 +40,37 @@ $(document).ready(function () {
   );
 });
 
+// search input field validation
+//button disabled state
+$("#search").attr("disabled", true);
+
+//event listeners (change paste keyup)
+$("#country").on("change paste keyup", function () {
+  //search input field value
+  var country = $(this).val();
+
+  // new array of countries
+  var coutriesArr = [];
+
+  //loop countries object and gets country
+  for (const key in countries) {
+    if (Object.hasOwnProperty.call(countries, key)) {
+      const element = countries[key];
+      //fiils array with countries
+      coutriesArr.push(element)
+    }
+  }
+  //disables search element if value country do not match
+  $("#search").attr("disabled", !(new RegExp(country, "i")).test("[" + coutriesArr.join("][") + "]"));
+});
+
 //-----------------------------------------------
 // Event listener for the search button
 $('#search').on('click', function () {
   country = $('#country').val();
   searcheByCountry(country);
-  getCountryData(country, function (data) {
-    createCountryInformationConteiner(data);
-    getRecipeData(country, function (data) {
-      createRecepiesConteiner(data);
-      console.log(data);
-    });
-  });
-  // 
-
-
-  $("#exampleModal").modal('show');
-  $("#exampleModalLabel").text(country);
 });
+
 //-----------------------------------------------
 // fucntion to populate cards with recipes from API
 function updateCardInformation(getData, country) {
@@ -173,70 +186,36 @@ function createCountryInformationConteiner(data) {
 }
 
 function createRecepiesConteiner(data) {
-  console.log(data, "sddd")
-  data.hits.forEach((element, index) => {
-    $('#accordion').append(`
-      <div class="card-header row" id="headingOne${index}">
-        <div class="col-3">
-          <img class="card-img" src="${element.recipe.image}" alt="${element.recipe.label}"/>
+  console.log(data, "sddd");
+  console.log(data.hits.length, "sddd");
+
+  if(!data.hits.length){
+    $('#accordion').append(`<div class="d-flex justify-content-center align-items-center">We can not find recepies for this country</div>`)
+  }else{
+    data.hits.forEach((element, index) => {
+      $('#accordion').append(`
+        <div class="card-header row" id="headingOne${index}">
+          <div class="col-3">
+            <img class="card-img" src="${element.recipe.image}" alt="${element.recipe.label}"/>
+          </div>
+          <div class="col-9">
+            <h5>${element.recipe.label}</h5>
+            <p>Calories: ${element.recipe.calories} </p>
+            <p>Cautions: ${element.recipe.cautions} </p>
+            <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
+              aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
+            <button class="btn btn-link text-left addToFavorite" type="button"> Add to favorite </button>
+          </div>
         </div>
-        <div class="col-9">
-          <h5>${element.recipe.label}</h5>
-          <p>Calories: ${element.recipe.calories} </p>
-          <p>Cautions: ${element.recipe.cautions} </p>
-          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
-        aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
+        <div id="collapseOne${index}" class="collapse" aria-labelledby="headingOne${index}" data-parent="#accordion">
+            <div class="card-body"> 
+                Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the
+                <code>.show</code> class. 
+            </div>
         </div>
-      </div>
-      <div id="collapseOne${index}" class="collapse" aria-labelledby="headingOne${index}" data-parent="#accordion">
-                        <div class="card-body"> Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the
-                           <code>.show</code> class. </div>
-      </div>
-    `)
-  })
-
-
-  // data.hits.forEach((element, index) => {
-
-  //   var cardBodyEl = $("<div>");
-  //   cardBodyEl.addClass("card-body col-10");
-
-  //   var h5El = $("<h5>");
-  //   h5El.addClass("card-title");
-  //   h5El.text(element.recipe.label);
-
-  //   var pEl = $("<p>");
-  //   pEl.addClass("card-text");
-  //   pEl.text("cautions: " + element.recipe.cautions.join(","));
-
-  //   var aEl = $("<a>");
-  //   aEl.addClass("btn btn-primary");
-  //   aEl.attr("data-toggle", "collapse");
-  //   aEl.attr("data-target", "#collapse" + index);
-  //   aEl.attr("aria-expanded", "true");
-  //   aEl.attr("aria-controls", "collapse" + index);
-  //   aEl.text("add to favorite");
-  //   {/* <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" */ }
-  //   //                             aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
-
-  //   // cardEl.append(cardBodyEl);
-  //   // cardBodyEl.append(h5El);
-  //   // cardBodyEl.append(pEl);
-  //   // cardBodyEl.append(aEl);
-
-  //   cardBodyEl.append(h5El);
-  //   cardBodyEl.append(pEl);
-  //   cardBodyEl.append(aEl);
-
-  //   cardHeaderEl.append(imgEl);
-  //   cardHeaderEl.append(cardBodyEl);
-
-  //   cardEl.append(cardHeaderEl);
-  //   cardEl.append(cardCollapseEl);
-
-  //   $("#accordion").append(cardEl);
-  // });
-
+      `)
+    })
+  }
 }
 
 
