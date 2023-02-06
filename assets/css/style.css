@@ -91,7 +91,10 @@ header {
 /* end of search button styles */
 
 /*Modal */
-
+.modal-header{
+background-color: #03989e;
+opacity: 0.8;
+}
 .modal-dialog {
   color:#03989e;
   height: 100%;
@@ -133,6 +136,10 @@ header {
   float: left;
   margin: 0;
 }
+ .modal-footer {
+ background-color: #03989e;
+ opacity: 0.8;
+ }
 
 /*End of modal styles */
 
