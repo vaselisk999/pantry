@@ -7,7 +7,7 @@
         
         onRegionClick: function (event, code) {
             //path country name to searchApiobg
-            searchApiObj.searcheByCountry(countries[code]);
+            searcheByCountry(countries[code]);
         },
         onResize: function (event, width, height) {
             // for test pourpose
