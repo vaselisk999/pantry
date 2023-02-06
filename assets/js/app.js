@@ -33,7 +33,6 @@ $(document).ready(function () {
         My favorites\
       </button>\
       <div class="dropdown-menu">\
-        <button class="dropdown-item" type="button">Action</button>\
       </div>\
     </div>\
   </nav>'
@@ -104,21 +103,26 @@ function updateCardInformation(getData, country) {
   });
 }
 
-//function to add recipe
+//function to add recipe to favorite dropdownlist
 
-var addToFavoriteBtn = $(".addToFavBtn");
-var recipeCardTitle = $(".card-title");
-$(".card-body").on("click", "button", function (event) {
+var addToFavoriteBtn = $(".addToFavorite");
+var recipeCardTitle = $(".recipeHeader");
+var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
+var dropdownList = $(".dropdown-menu");
+
+
+addToFavoriteBtn.each(function(){
+$(this).on("click", function (event) {
   event.preventDefault();
 
-  var recipeName = recipeCardTitle.text();
+  var recipeName = $(event.target).text();
   favList.push(recipeName);
   localStorage.setItem("My favorites", JSON.stringify(favList));
   renderDropdownList();
+})
 });
 
-var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
-var dropdownList = $(".dropdown-menu");
+
 
 function renderDropdownList() {
   dropdownList.empty();
@@ -131,7 +135,9 @@ function renderDropdownList() {
 
     dropdownList.append(newFavBtn);
   }
-}
+};
+//////
+
 
 function searcheByCountry(country) {
   $(".modal-body").empty();
@@ -198,8 +204,8 @@ function createRecepiesConteiner(data) {
           <div class="col-3">
             <img class="card-img" src="${element.recipe.image}" alt="${element.recipe.label}"/>
           </div>
-          <div class="col-9">
-            <h5>${element.recipe.label}</h5>
+          <div class="col-9 recipeContent">
+            <h5 class="recipeHeader">${element.recipe.label}</h5>
             <p>Calories: ${element.recipe.calories} </p>
             <p>Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
