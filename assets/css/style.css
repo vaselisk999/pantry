@@ -92,44 +92,44 @@ header {
 
 /*Modal */
 
-.modal-content {
-  color: white;
-  width: 1000px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .modal-dialog {
-  color: white;
-  opacity: 0.8;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
-#message-text {
-  color: white;
-  background-color: #03989e;
-  border-radius: 30px;
-  height: 600px;
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  border-radius: 0;
+  /* background-color: #03989e; */
+  border-radius: 20px;
+  /* color: white; */
 }
 
-
-.btn {
+.modal-dialog  .btn {
   background-color: #ffbd59;
   color: #03989e;
   border-radius: 15px;
 }
 
-.btn:hover {
+.modal-dialog  .btn:hover {
   background-color: #03989e;
   color: #ffbd59;
   border-radius: 15px;
 }
 
-.flag {
+.modal-dialog  .flag {
   max-width: 200px;
   height: auto;
+}
+
+.modal-dialog  .card-img {
+  max-width: 150px;
+  height: auto;
+  float: left;
+  margin: 0;
 }
 
 /*End of modal styles */
@@ -167,12 +167,12 @@ header {
 
 /* Float four columns side by side */
 .card-body {
-  position: relative;
+  /* position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 16px; */
 
-
+  text-align: left;
 }
 
 /* Clear floats after the columns */
