@@ -92,7 +92,7 @@ header {
 
 /*Modal */
 .modal-header{
-background-color: #03989e;
+background-color: #ffbd59;
 opacity: 0.8;
 }
 .modal-dialog {
@@ -137,7 +137,7 @@ opacity: 0.8;
   margin: 0;
 }
  .modal-footer {
- background-color: #03989e;
+ background-color: #ffbd59;
  opacity: 0.8;
  }
 
