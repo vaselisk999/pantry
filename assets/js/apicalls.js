@@ -17,7 +17,7 @@ async function getCountryData(country, callback) {
 // function to get recipes from EDAMAM API
 async function getRecipeData(country, callback) {
     try {
-      const response = await fetch(`https://api.edamam.com/search?q=${country}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+      const response = await fetch(`https://api.edamam.com/api/search?q=${country}&app_id=${APP_ID}&app_key=${APP_KEY}`);
       const data = await response.json();
       callback(data);
       
@@ -27,3 +27,7 @@ async function getRecipeData(country, callback) {
     }
     
   }
+
+
+  
+
