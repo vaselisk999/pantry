@@ -74,27 +74,7 @@ function updateUI(data) {
 
   `);
 }
-// function updateCardsWithRecipeData(country) {
-//   getRecipeData(country, function(data) {
-//     console.log(data);
-//     const recipes = data.hits;
-    
-//     // Clear the existing cards
-//     $('#cards-container').html('');
-//     // Loop through the recipes array
-//     for (const recipe of recipes) {
-//       const { label, image, url } = recipe.recipe;
-//       // Update the card with the new data
-//       $('#cards-container').append(`
-//         <div class="card">
-//           <img src="${image}" alt="${label}">
-//           <h2>${label}</h2>
-//           <a href="${url}" target="_blank">View Recipe</a>
-//         </div>
-//       `);
-//     }
-//   });
-// }
+
 getRecipeData(country, function (data) {
   console.log(data);
 });
