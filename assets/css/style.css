@@ -203,3 +203,13 @@ footer {
   background-color: #ffbd59;
   height: var(--footer-heigth);
 }
+
+/* media query */
+@media only screen and (max-width: 500px) {
+  .title-icon-wrap h2{
+    display: none;
+}
+  .tasty-header {
+    justify-content: flex-start;
+  }
+}
