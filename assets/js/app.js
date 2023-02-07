@@ -111,15 +111,15 @@ var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
 var dropdownList = $(".dropdown-menu");
 
 
-addToFavoriteBtn.each(function(){
-$(this).on("click", function (event) {
-  event.preventDefault();
+addToFavoriteBtn.each(function () {
+  $(this).on("click", function (event) {
+    event.preventDefault();
 
-  var recipeName = $(event.target).text();
-  favList.push(recipeName);
-  localStorage.setItem("My favorites", JSON.stringify(favList));
-  renderDropdownList();
-})
+    var recipeName = $(event.target).text();
+    favList.push(recipeName);
+    localStorage.setItem("My favorites", JSON.stringify(favList));
+    renderDropdownList();
+  })
 });
 
 
@@ -195,9 +195,9 @@ function createRecepiesConteiner(data) {
   console.log(data, "sddd");
   console.log(data.hits.length, "sddd");
 
-  if(!data.hits.length){
+  if (!data.hits.length) {
     $('#accordion').append(`<div class="d-flex justify-content-center align-items-center">We can not find recepies for this country</div>`)
-  }else{
+  } else {
     data.hits.forEach((element, index) => {
       $('#accordion').append(`
         <div class="card-header row" id="headingOne${index}">
@@ -209,7 +209,7 @@ function createRecepiesConteiner(data) {
             <p>Calories: ${element.recipe.calories} </p>
             <p>Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
-              aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
+              aria-expanded="true" aria-controls="collapseOne"> Click for recipe </button>
             <button class="btn btn-link text-left addToFavorite" type="button"> Add to favorites </button>
           </div>
         </div>
@@ -223,7 +223,3 @@ function createRecepiesConteiner(data) {
     })
   }
 }
-
-
-
-
