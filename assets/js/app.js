@@ -209,7 +209,7 @@ function createRecepiesConteiner(data) {
             <p>Calories: ${element.recipe.calories} </p>
             <p>Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
-              aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
+              aria-expanded="true" aria-controls="collapseOne"> Click for recipe </button>
             <button class="btn btn-link text-left addToFavorite" type="button"> Add to favorites </button>
           </div>
         </div>
