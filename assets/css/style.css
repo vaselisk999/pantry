@@ -245,3 +245,9 @@ footer {
     justify-content: flex-start;
   }
 }
+
+/* dot icons div with capital, region and currencies" */
+.dotIcon {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

@@ -175,9 +175,9 @@ function createCountryInformationConteiner(data) {
   imgEl.attr("src", data[0].flags.png);
   imgEl.attr("style", "height: 100px; float: right");
 
-  var capitalEl = $("<p>Capital: " + data[0].capital[0] + " </p>");
-  var regionEl = $("<p>Region: " + data[0].region + " </p>");
-  var currenciesEl = $("<p>Currencies: " + data[0].currencies?.DKK?.name + " </p>");
+  var capitalEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Capital: ' + data[0].capital[0] + ' </span></div>');
+  var regionEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Region: ' + data[0].region +  ' </span></div>');
+  var currenciesEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Currencies: ' + data[0].currencies?.DKK?.name +  '</span></div>');
 
   infoEl.append(capitalEl);
   infoEl.append(regionEl);
