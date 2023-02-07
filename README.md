@@ -16,7 +16,7 @@ I WANT to find facts about the chosen country, while finding new recipes.
 
 SO THAT I can learn facts about different countries and prepare new meals.
 
-## Built With:
+## Built With
 
   ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
@@ -33,7 +33,7 @@ SO THAT I can learn facts about different countries and prepare new meals.
 ## APIs Used
 
 * [Edamam](https://www.edamam.com/)
-* [Country-Facts](https://rapidapi.com/richardarthur228/api/country-facts)
+* [restcountries](https://restcountries.com/)
 
 
 
@@ -55,7 +55,7 @@ Aleksandra Miekisiak
 
 
 
-Copyright © 2023. All rights are reserved.
+Copyright © 2023.  All rights are reserved.
 
 
 

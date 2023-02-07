@@ -153,39 +153,7 @@ text-align: center;
 /*End of modal styles */
 
 
-/*cards styles*/
-.row {
-  display: flex;
-  justify-content: space-around;
-  padding-left: 15px;
-}
-
-.btn-primary {
-  background-color: #ffbd59;
-  color: #03989e;
-  box-shadow: #505050;
-}
-
-.btn-primary:hover {
-  background-color: #03989e;
-  color: #ffbd59;
-  border-radius: 15px;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .row {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-/*end of cards styles*/
+/*Dropdown styles*/
 
 #dropdown-btn {
   background-color: #03989e;
@@ -238,4 +206,20 @@ text-align: center;
 footer {
   background-color: #ffbd59;
   height: var(--footer-heigth);
+}
+
+/* media query */
+@media only screen and (max-width: 500px) {
+  .title-icon-wrap h2{
+    display: none;
+}
+  .tasty-header {
+    justify-content: flex-start;
+  }
+}
+
+/* dot icons div with capital, region and currencies" */
+.dotIcon {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
