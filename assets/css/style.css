@@ -207,10 +207,14 @@ text-align: center;
 }
 
 .dropdown-menu {
-  border-radius: 100px;
   color: #03989e;
-  border-radius: 100px;
   border-color: #03989e;
+}
+
+
+.dropdown-menu.show {
+  height: 400px;
+  overflow: overlay;
 }
 
 .dropdown-item {

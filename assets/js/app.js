@@ -37,7 +37,27 @@ $(document).ready(function () {
     </div>\
   </nav>'
   );
+
+
+  renderDropdownList()
 });
+
+
+function renderDropdownList() {
+  // Render list
+  var dropdownList = $('#header').find(".dropdown-menu");
+  dropdownList.empty();
+  var favList = JSON.parse(localStorage.getItem("myFavorite"));
+  if (favList.length > 0) {
+    for (var i = 0; i < favList.length; i++) {
+      var newFavBtn = $("<button>");
+      newFavBtn.text(favList[i]);
+      newFavBtn.addClass("dropdown-item");
+      newFavBtn.attr("type", "button");
+      dropdownList.append(newFavBtn);
+    }
+  }
+}
 
 // search input field validation
 //button disabled state
@@ -70,74 +90,6 @@ $('#search').on('click', function () {
   searcheByCountry(country);
 });
 
-//-----------------------------------------------
-// fucntion to populate cards with recipes from API
-function updateCardInformation(getData, country) {
-  getData(country, (data) => {
-    let recipes = data.hits;
-    let recipe1 = recipes[0].recipe;
-    let recipe2 = recipes[1].recipe;
-    let recipe3 = recipes[2].recipe;
-
-    let cards = document.querySelectorAll(".card");
-    cards[0].querySelector(".card-img-top").setAttribute("src", recipe1.img);
-    cards[0].querySelector(".card-body").innerHTML = `
-      <h5 class="card-title">${recipe1.title}</h5>
-      <p class="card-text">${recipe1.description}</p>
-      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
-    `;
-
-    cards[1].querySelector(".card-img-top").setAttribute("src", recipe2.img);
-    cards[1].querySelector(".card-body").innerHTML = `
-      <h5 class="card-title">${recipe2.title}</h5>
-      <p class="card-text">${recipe2.description}</p>
-      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
-    `;
-
-    cards[2].querySelector(".card-img-top").setAttribute("src", recipe3.img);
-    cards[2].querySelector(".card-body").innerHTML = `
-      <h5 class="card-title">${recipe3.title}</h5>
-      <p class="card-text">${recipe3.description}</p>
-      <button class="btn btn-primary addToFavBtn">Add to Favourites</button>
-    `;
-  });
-}
-
-//function to add recipe to favorite dropdownlist
-
-var addToFavoriteBtn = $(".addToFavorite");
-var recipeCardTitle = $(".recipeHeader");
-var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
-var dropdownList = $(".dropdown-menu");
-
-
-addToFavoriteBtn.each(function(){
-$(this).on("click", function (event) {
-  event.preventDefault();
-
-  var recipeName = $(event.target).text();
-  favList.push(recipeName);
-  localStorage.setItem("My favorites", JSON.stringify(favList));
-  renderDropdownList();
-})
-});
-
-
-
-function renderDropdownList() {
-  dropdownList.empty();
-
-  for (var i = 0; i < favList.length; i++) {
-    var newFavBtn = $("<button>");
-    newFavBtn.text(favList[i]);
-    newFavBtn.addClass("dropdown-item");
-    newFavBtn.attr("type", "button");
-
-    dropdownList.append(newFavBtn);
-  }
-};
-//////
-
 
 function searcheByCountry(country) {
   $(".modal-body").empty();
@@ -148,16 +100,13 @@ function searcheByCountry(country) {
     $("#exampleModalLabel").text(country);
 
     getRecipeData(country, function (data) {
-      createRecepiesConteiner(data);
+      createRecepiesConteiner(data, country);
     });
   });
-
 }
 
 //displais country information conteiner
 function createCountryInformationConteiner(data) {
-  // console.log(data[0])
-
   var rowEl = $("<div>");
   rowEl.addClass("row")
 
@@ -191,14 +140,32 @@ function createCountryInformationConteiner(data) {
   $(".modal-body").append(secondRowEl);
 }
 
-function createRecepiesConteiner(data) {
-  console.log(data, "sddd");
-  console.log(data.hits.length, "sddd");
 
-  if(!data.hits.length){
+var list = [];
+
+function createRecepiesConteiner(data, country) {
+  if (!data.hits.length) {
     $('#accordion').append(`<div class="d-flex justify-content-center align-items-center">We can not find recepies for this country</div>`)
-  }else{
+  } else {
+    $('#accordion').find(".card-body").html();
+
     data.hits.forEach((element, index) => {
+      var ulEl = $("<ul></ul>");
+      element.recipe.ingredientLines.forEach(element => {
+        var liEl = $("<li>" + element + "</li>");
+        ulEl.append(liEl);
+      });
+
+      list.push({
+        index: index,
+        country: country,
+        image: element.recipe.image,
+        label: element.recipe.label,
+        calories: element.recipe.calories,
+        cautions: element.recipe.cautions,
+        list: ulEl[0],
+      });
+
       $('#accordion').append(`
         <div class="card-header row" id="headingOne${index}">
           <div class="col-3">
@@ -206,23 +173,36 @@ function createRecepiesConteiner(data) {
           </div>
           <div class="col-9 recipeContent">
             <h5 class="recipeHeader">${element.recipe.label}</h5>
-            <p>Calories: ${element.recipe.calories} </p>
-            <p>Cautions: ${element.recipe.cautions} </p>
+            <p class="calories">Calories: ${element.recipe.calories} </p>
+            <p class="cautions">Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
-              aria-expanded="true" aria-controls="collapseOne"> Collapsible Group Item #1 </button>
-            <button class="btn btn-link text-left addToFavorite" type="button"> Add to favorites </button>
+              aria-expanded="true" aria-controls="collapseOne"> Show more </button>
+            <button data-id="${index}" class="btn btn-link text-left addToFavorite" type="button"> Add to favorites </button>
           </div>
         </div>
         <div id="collapseOne${index}" class="collapse" aria-labelledby="headingOne${index}" data-parent="#accordion">
-            <div class="card-body"> 
-                Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the
-                <code>.show</code> class. 
+            <div class="card-body">
             </div>
         </div>
-      `)
+      `);
+
+      $('#accordion').find($(".card-body")[index]).append(ulEl[0]);
     })
   }
 }
+
+//function to add recipe to favorite dropdownlist
+var favoriteArray = [];
+$("#exampleModal").on("click", ".addToFavorite", function (e) {
+  e.preventDefault();
+  var index = $(this).attr("data-id");
+  console.log(list[index].label);
+  favoriteArray.push(list[index].label)
+  localStorage.setItem("myFavorite", JSON.stringify(favoriteArray));
+  renderDropdownList()
+});
+
+
 
 
 
