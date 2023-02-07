@@ -71,7 +71,7 @@ $('#search').on('click', function () {
 });
 
 //-----------------------------------------------
-// fucntion to populate cards with recipes from API
+// function to populate cards with recipes from API
 function updateCardInformation(getData, country) {
   getData(country, (data) => {
     let recipes = data.hits;
@@ -136,7 +136,8 @@ function renderDropdownList() {
     dropdownList.append(newFavBtn);
   }
 };
-//////
+
+//----------------------------------------
 
 
 function searcheByCountry(country) {
@@ -154,7 +155,7 @@ function searcheByCountry(country) {
 
 }
 
-//displais country information conteiner
+//displays country information conteiner
 function createCountryInformationConteiner(data) {
   // console.log(data[0])
 

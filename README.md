@@ -33,7 +33,7 @@ SO THAT I can learn facts about different countries and prepare new meals.
 ## APIs Used
 
 * [Edamam](https://www.edamam.com/)
-* [Country-Facts](https://rapidapi.com/richardarthur228/api/country-facts)
+* [restcountries](https://restcountries.com/)
 
 
 
