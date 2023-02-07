@@ -1,2 +1,0 @@
-APP_ID="bc010dde";
-APP_KEY="1ee0c2c1114b85d175b424f9f1c7a97d";
