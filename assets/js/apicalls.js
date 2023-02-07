@@ -13,7 +13,7 @@ async function getCountryData(country, callback) {
   }
 }
 
-// Function to get recipe data from spoonacular API
+// Function to get recipe data from EDAMAM API
 async function getRecipeData(country, callback) {
   try {
     const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${country}`);
