@@ -223,7 +223,3 @@ function createRecepiesConteiner(data) {
     })
   }
 }
-
-
-
-
