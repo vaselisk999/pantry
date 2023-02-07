@@ -111,15 +111,15 @@ var favList = JSON.parse(localStorage.getItem("My favorites")) || [];
 var dropdownList = $(".dropdown-menu");
 
 
-addToFavoriteBtn.each(function(){
-$(this).on("click", function (event) {
-  event.preventDefault();
+addToFavoriteBtn.each(function () {
+  $(this).on("click", function (event) {
+    event.preventDefault();
 
-  var recipeName = $(event.target).text();
-  favList.push(recipeName);
-  localStorage.setItem("My favorites", JSON.stringify(favList));
-  renderDropdownList();
-})
+    var recipeName = $(event.target).text();
+    favList.push(recipeName);
+    localStorage.setItem("My favorites", JSON.stringify(favList));
+    renderDropdownList();
+  })
 });
 
 
@@ -195,9 +195,9 @@ function createRecepiesConteiner(data) {
   console.log(data, "sddd");
   console.log(data.hits.length, "sddd");
 
-  if(!data.hits.length){
+  if (!data.hits.length) {
     $('#accordion').append(`<div class="d-flex justify-content-center align-items-center">We can not find recepies for this country</div>`)
-  }else{
+  } else {
     data.hits.forEach((element, index) => {
       $('#accordion').append(`
         <div class="card-header row" id="headingOne${index}">
@@ -223,3 +223,5 @@ function createRecepiesConteiner(data) {
     })
   }
 }
+
+
