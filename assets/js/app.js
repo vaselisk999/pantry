@@ -223,5 +223,3 @@ function createRecepiesConteiner(data) {
     })
   }
 }
-
-
