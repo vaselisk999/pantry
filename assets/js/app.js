@@ -47,7 +47,7 @@ function renderDropdownList() {
   // Render list
   var dropdownList = $('#header').find(".dropdown-menu");
   dropdownList.empty();
-  var favList = JSON.parse(localStorage.getItem("myFavorite"));
+  var favList = JSON.parse(localStorage.getItem("myFavorite")) || [];
   if (favList.length > 0) {
     for (var i = 0; i < favList.length; i++) {
       var newFavBtn = $("<button>");
@@ -119,9 +119,10 @@ function createCountryInformationConteiner(data) {
   var flagWrapperEl = $("<div>");
   flagWrapperEl.addClass("col-6");
 
+  console.log(data[0].flags.png, "111111")
   var imgEl = $("<img/>");
   imgEl.attr("alt", data[0].capital[0]);
-  imgEl.attr("src", data[0].flag);
+  imgEl.attr("src", data[0].flags.png);
   imgEl.attr("style", "height: 100px; float: right");
 
   var capitalEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Capital: ' + data[0].capital[0] + ' </span></div>');
