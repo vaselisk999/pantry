@@ -121,12 +121,18 @@ function createCountryInformationConteiner(data) {
 
   var imgEl = $("<img/>");
   imgEl.attr("alt", data[0].capital[0]);
-  imgEl.attr("src", data[0].flags.png);
+  imgEl.attr("src", data[0].flag);
   imgEl.attr("style", "height: 100px; float: right");
 
   var capitalEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Capital: ' + data[0].capital[0] + ' </span></div>');
   var regionEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Region: ' + data[0].region +  ' </span></div>');
-  var currenciesEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Currencies: ' + data[0].currencies?.DKK?.name +  '</span></div>');
+
+  var currencies = "";
+  for (var currency in data[0].currencies) {
+    currencies += data[0].currencies[currency].name + ", ";
+  }
+  currencies = currencies.slice(0, -2);
+  var currenciesEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Currencies: ' + currencies +  '</span></div>');
 
   infoEl.append(capitalEl);
   infoEl.append(regionEl);
@@ -139,6 +145,7 @@ function createCountryInformationConteiner(data) {
   $(".modal-body").prepend(rowEl);
   $(".modal-body").append(secondRowEl);
 }
+
 
 
 var list = [];
