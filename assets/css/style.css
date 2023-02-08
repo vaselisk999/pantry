@@ -79,11 +79,13 @@ header {
   padding: 0;
   margin-left: 20px;
   color: #ffbd59;
-  
+
 }
-.input-field{
-text-align: center;
+
+.input-field {
+  text-align: center;
 }
+
 .search-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -150,6 +152,10 @@ text-align: center;
   opacity: 0.9;
 }
 
+.addToFavorite {
+  margin: 5px 0;
+}
+
 /*End of modal styles */
 
 
@@ -210,11 +216,16 @@ footer {
 
 /* media query */
 @media only screen and (max-width: 500px) {
-  .title-icon-wrap h2{
+  .title-icon-wrap h2 {
     display: none;
-}
+  }
+
   .tasty-header {
     justify-content: flex-start;
+  }
+
+  #world-map {
+    padding: 10px;
   }
 }
 

@@ -1,3 +1,4 @@
+//self-involved function
 (function ($) {
     $('#world-map').vectorMap({
         map: 'world_mill_en',
@@ -11,9 +12,10 @@
         },
         onResize: function (event, width, height) {
             // for test pourpose
-            console.log(event, "event");
-            console.log(width, "width");
-            console.log(height, "height");
+            // ToDo logic for scaling 
+            // console.log(event, "event");
+            // console.log(width, "width");
+            // console.log(height, "height");
         },
     });
 })(jQuery);

@@ -1,16 +1,3 @@
-// for the html file:
-// 1. use bootsrap
-// 2. create a map and make it clickable
-// 3. create popup
-// 4. integrate API country facts
-// 5. integrate API developer EDAMAM
-// 6. create structure for pop up (what should be displayed inside)
-// country name, how many recipes we want to be shown
-// 7. create cool logo for header
-// 8. create dropdown menu with saved recipes
-// 9. Use the MealDB API
-
-
 // Global variables
 // -----------------------------------------------
 // Variable for searched country
@@ -18,6 +5,8 @@ let country;
 //-----------------------------------------------
 // Header/Navbar with logo and dropdown
 $(document).ready(function () {
+
+  //adds my favorite button with dropdown
   var header = $("#header");
   header.append(
     '<nav class=" navbar-expand-lg navbar-light  d-flex justify-content-center">\
@@ -38,7 +27,7 @@ $(document).ready(function () {
   </nav>'
   );
 
-
+  // runs renderDropdownList function
   renderDropdownList()
 });
 
@@ -47,10 +36,16 @@ function renderDropdownList() {
   // Render list
   var dropdownList = $('#header').find(".dropdown-menu");
   dropdownList.empty();
+
+  //gets local storage data if data is empty 
   var favList = JSON.parse(localStorage.getItem("myFavorite")) || [];
+  
+  //fills dropdown list with recipes name
   if (favList.length > 0) {
     for (var i = 0; i < favList.length; i++) {
+      //creates button element
       var newFavBtn = $("<button>");
+      //adds recipe name
       newFavBtn.text(favList[i]);
       newFavBtn.addClass("dropdown-item");
       newFavBtn.attr("type", "button");
@@ -90,44 +85,57 @@ $('#search').on('click', function () {
   searcheByCountry(country);
 });
 
-
+// country click event handler 
 function searcheByCountry(country) {
   $(".modal-body").empty();
-  $("#exampleModal").modal('show');
 
+  //shows modal
+  $("#recipeModal").modal('show');
+
+  //gets data from restcountries
   getCountryData(country, function (data) {
+    //runs function
     createCountryInformationConteiner(data);
-    $("#exampleModalLabel").text(country);
+    $("#recipeModalLabel").text(country);
 
+    //gets data from edamam
     getRecipeData(country, function (data) {
-      createRecepiesConteiner(data, country);
+      //runs function to fill 
+      createRecipeConteiner(data, country);
     });
   });
 }
 
 //displais country information conteiner
 function createCountryInformationConteiner(data) {
+
+  //creates div element with row class 
   var rowEl = $("<div>");
   rowEl.addClass("row")
 
+  //creates div element with accordion class 
   var secondRowEl = $("<div>");
   secondRowEl.addClass("accordion");
   secondRowEl.attr("id", "accordion");
 
+  //creates info block
   var infoEl = $("<div>");
   infoEl.addClass("col-6");
+  //creates flag image wrapper block
   var flagWrapperEl = $("<div>");
   flagWrapperEl.addClass("col-6");
 
-  console.log(data[0].flags.png, "111111")
+  // creates image element
   var imgEl = $("<img/>");
   imgEl.attr("alt", data[0].capital[0]);
   imgEl.attr("src", data[0].flags.png);
   imgEl.attr("style", "height: 100px; float: right");
 
+  //creates capital and region block
   var capitalEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Capital: ' + data[0].capital[0] + ' </span></div>');
   var regionEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Region: ' + data[0].region +  ' </span></div>');
 
+  // currencies block
   var currencies = "";
   for (var currency in data[0].currencies) {
     currencies += data[0].currencies[currency].name + ", ";
@@ -148,22 +156,31 @@ function createCountryInformationConteiner(data) {
 }
 
 
-
+//list array
+//ToDo clears list array 
 var list = [];
 
-function createRecepiesConteiner(data, country) {
+function createRecipeConteiner(data, country) {
+
+  //checks if the data is not empty if empty show the text "We can not find recipes for this country"
   if (!data.hits.length) {
     $('#accordion').append(`<div class="d-flex justify-content-center align-items-center">We can not find recepies for this country</div>`)
   } else {
     $('#accordion').find(".card-body").html();
 
+    //fills accordion selection with data from API
+    //TODo refactor this code below
+
     data.hits.forEach((element, index) => {
+
+      //creates unordered list and fills with ingredients
       var ulEl = $("<ul></ul>");
       element.recipe.ingredientLines.forEach(element => {
         var liEl = $("<li>" + element + "</li>");
         ulEl.append(liEl);
       });
 
+      // fills list array with data
       list.push({
         index: index,
         country: country,
@@ -173,7 +190,7 @@ function createRecepiesConteiner(data, country) {
         cautions: element.recipe.cautions,
         list: ulEl[0],
       });
-
+    
       $('#accordion').append(`
         <div class="card-header row" id="headingOne${index}">
           <div class="col-3">
@@ -193,21 +210,27 @@ function createRecepiesConteiner(data, country) {
             </div>
         </div>
       `);
-
+      // appends card body recipe
       $('#accordion').find($(".card-body")[index]).append(ulEl[0]);
     })
   }
 }
 
 //function to add recipe to favorite dropdownlist
+//ToDo clears favoriteArray array 
 var favoriteArray = [];
-$("#exampleModal").on("click", ".addToFavorite", function (e) {
+// addToFavorite event handler
+$("#recipeModal").on("click", ".addToFavorite", function (e) {
   e.preventDefault();
+  //get recipe id
   var index = $(this).attr("data-id");
-  console.log(list[index].label);
-  favoriteArray.push(list[index].label)
+  
+  favoriteArray.push(list[index].label);
+
+  //save data to localstorage
   localStorage.setItem("myFavorite", JSON.stringify(favoriteArray));
-  renderDropdownList()
+  // runs renderDropdownList function
+  renderDropdownList();
 });
 
 
