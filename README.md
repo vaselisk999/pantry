@@ -16,6 +16,10 @@ I WANT to find facts about the chosen country, while finding new recipes.
 
 SO THAT I can learn facts about different countries and prepare new meals.
 
+## How to use
+
+You can easily find interesting facts and delicious recipes about different countries by either searching in the search input or directly clicking on a country on the map. Simply choose your preferred method and start exploring the fascinating world of food and culture. Enjoy your culinary journey!
+
 ## Built With
 
   ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
