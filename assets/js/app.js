@@ -41,8 +41,8 @@ $(document).ready(function () {
 
   renderDropdownList()
 });
-
-
+//-----------------------------------------------
+// Function to render the dropdown list
 function renderDropdownList() {
   // Render list
   var dropdownList = $('#header').find(".dropdown-menu");
@@ -58,7 +58,7 @@ function renderDropdownList() {
     }
   }
 }
-
+//-----------------------------------------------
 // search input field validation
 //button disabled state
 $("#search").attr("disabled", true);
@@ -112,7 +112,7 @@ function searcheByCountry(country) {
   });
 }
 
-//displais country information conteiner
+// Displays country information container
 function createCountryInformationConteiner(data) {
   var rowEl = $("<div>");
   rowEl.addClass("row")
@@ -188,7 +188,7 @@ function createRecepiesConteiner(data, country) {
           </div>
           <div class="col-9 recipeContent">
             <h5 class="recipeHeader">${element.recipe.label}</h5>
-            <p class="calories">Calories: ${element.recipe.calories} </p>
+            <p class="calories">Calories: ${Math.round(element.recipe.calories)} </p>
             <p class="cautions">Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
               aria-expanded="true" aria-controls="collapseOne"> Show more </button>
