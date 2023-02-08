@@ -90,6 +90,13 @@ $('#search').on('click', function () {
   searcheByCountry(country);
 });
 
+// Event listener for the enter key
+$('#country').on('keyup', function (e) {
+  if (e.keyCode === 13) {
+    $('#search').click();
+  }
+});
+
 
 function searcheByCountry(country) {
   $(".modal-body").empty();
