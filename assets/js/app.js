@@ -30,8 +30,8 @@ $(document).ready(function () {
   // runs renderDropdownList function
   renderDropdownList()
 });
-
-
+//-----------------------------------------------
+// Function to render the dropdown list
 function renderDropdownList() {
   // Render list
   var dropdownList = $('#header').find(".dropdown-menu");
@@ -53,7 +53,7 @@ function renderDropdownList() {
     }
   }
 }
-
+//-----------------------------------------------
 // search input field validation
 //button disabled state
 $("#search").attr("disabled", true);
@@ -85,7 +85,13 @@ $('#search').on('click', function () {
   searcheByCountry(country);
 });
 
-// country click event handler 
+// Event listener for the enter key
+$('#country').on('keyup', function (e) {
+  if (e.keyCode === 13) {
+    $('#search').click();
+  }
+});
+
 function searcheByCountry(country) {
   $(".modal-body").empty();
 
@@ -106,7 +112,7 @@ function searcheByCountry(country) {
   });
 }
 
-//displais country information conteiner
+// Displays country information container
 function createCountryInformationConteiner(data) {
 
   //creates div element with row class 
@@ -198,7 +204,7 @@ function createRecipeConteiner(data, country) {
           </div>
           <div class="col-9 recipeContent">
             <h5 class="recipeHeader">${element.recipe.label}</h5>
-            <p class="calories">Calories: ${element.recipe.calories} </p>
+            <p class="calories">Calories: ${Math.round(element.recipe.calories)} </p>
             <p class="cautions">Cautions: ${element.recipe.cautions} </p>
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" data-target="#collapseOne${index}"
               aria-expanded="true" aria-controls="collapseOne"> Show more </button>
