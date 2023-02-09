@@ -133,9 +133,10 @@ function createCountryInformationConteiner(data) {
 
   // creates image element
   var imgEl = $("<img/>");
+  
   imgEl.attr("alt", data[0].capital[0]);
   imgEl.attr("src", data[0].flags.png);
-  imgEl.attr("style", "height: 100px; float: right");
+  imgEl.attr("style", "height: 100px; float: right; border: 3px solid #03989e ");
 
   //creates capital and region block
   var capitalEl = $('<div class= "dotIcon">\<i class="fa-solid fa-circle"></i>\<span> Capital: ' + data[0].capital[0] + ' </span></div>');
